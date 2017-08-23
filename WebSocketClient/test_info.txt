@@ -1,0 +1,3 @@
+﻿qa.homecloud.honeywell.com.cn
+/ws2/home_saas_ws_node_1 
+test 12345678 isEcypted=0
