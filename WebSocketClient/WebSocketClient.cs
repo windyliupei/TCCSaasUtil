@@ -49,16 +49,21 @@ namespace WebSocketClient
 
         private void MakeConnection()
         {
+            
             try
             {
                 if (_webSocketClient!=null)
 	            {
 		            _webSocketClient.Close();
 	            }
-               
-
-                string port = num_Port.Value.ToString();
-                _webSocketClient = new WebSocket(cmb_wss.SelectedItem.ToString() + txt_Server.Text.Trim()+":"+port+"/"+txt_Cmd.Text.Trim());
+                string port = string.Empty;
+                if (num_Port.Value.ToString() != "80")
+                {
+                    port = ":" + num_Port.Value.ToString();
+                }
+                
+                _webSocketClient = new WebSocket(cmb_wss.SelectedItem.ToString() + txt_Server.Text.Trim()+ port + txt_Cmd.Text.Trim());
+                //_webSocketClient = new WebSocket("wss://echo.websocket.org");
 
                 if (chk_needLogin.Checked)
                 {
@@ -72,25 +77,20 @@ namespace WebSocketClient
                 _webSocketClient.OnOpen += _webSocketClient_OnOpen;
                 _webSocketClient.OnMessage += (sender, e) =>
                 {
-                    //txt_Received.Clear();
-                    //txt_Received.Text = e.Data;
                     txt_Received.AppendText(string.Format("-----{0}-----",DateTime.Now));
                     txt_Received.AppendText("\r\n");
-                    //txt_Received.AppendText(e.Data);
+                    txt_Received.AppendText(e.Data);
                     txt_Received.AppendText("\r\n");
                     txt_Received.AppendText("\r\n");
-                    //txt_Received.AppendText(string.Format("-----End’-----"));
                 };
                 _webSocketClient.WaitTime = TimeSpan.FromSeconds(8);
 
+                //_webSocketClient.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Ssl2;
+                //_webSocketClient.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Ssl3;
+                //_webSocketClient.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls;
+                //_webSocketClient.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls11;
+                _webSocketClient.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
                 
-                var sslConfiguration = new ClientSslConfiguration(cmb_wss.SelectedItem.ToString() + txt_Server.Text.Trim() + ":" + port);
-                sslConfiguration.ServerCertificateValidationCallback = delegate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
-                {
-                    return true;
-                };
-                 
-                _webSocketClient.SslConfiguration = sslConfiguration;
                 _webSocketClient.Connect();
                 //////_webSocketClient.Send("handshake");
                                
@@ -160,9 +160,7 @@ namespace WebSocketClient
             string uri = txt_login_ReqUrl.Text;
             string url = string.Format("{0}{1}:{2}{3}",schema,host,port,uri);
             string postData = GetPostData();
-
             
-
             HttpClientOperation operation = new HttpClientOperation();
             HttpContent content = new StringContent(postData);
             HttpResponseMessage result = operation.SendRequestAsync(HttpMethod.Post, url, content, CancellationToken.None);
@@ -203,7 +201,7 @@ namespace WebSocketClient
                 string websocketCommand =
                     $"v1/websocket?t={jsonWsRequest}";
 
-                txt_Cmd.Text = websocketCommand;
+               // txt_Cmd.Text = websocketCommand;
             }
             else
             {
