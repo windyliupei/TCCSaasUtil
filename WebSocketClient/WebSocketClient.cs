@@ -62,13 +62,13 @@ namespace WebSocketClient
                     port = ":" + num_Port.Value.ToString();
                 }
                 
-                _webSocketClient = new WebSocket(cmb_wss.SelectedItem.ToString() + txt_Server.Text.Trim()+ port + txt_Cmd.Text.Trim());
+                _webSocketClient = new WebSocket(cmb_wss.SelectedItem.ToString() + txt_wsServer.Text.Trim()+ port + txt_Cmd.Text.Trim());
                 //_webSocketClient = new WebSocket("wss://echo.websocket.org");
 
                 if (chk_needLogin.Checked)
                 {
                     WebSocketSharp.Net.Cookie cookie =
-                        new WebSocketSharp.Net.Cookie("SESSION", _loginResponse.data.sessionId, "/", txt_Server.Text);
+                        new WebSocketSharp.Net.Cookie("SESSION", _loginResponse.data.sessionId, "/", txt_wsServer.Text);
                         _webSocketClient.SetCookie(cookie);
                 }
                
@@ -114,7 +114,7 @@ namespace WebSocketClient
 
             toolStripStatusLabel2.ForeColor = Color.Red;
             toolStripStatusLabel2.Text = "Not login";
-            MessageBox.Show("Connection was broken! Please re-login");
+            MessageBox.Show($"Connection was broken:{(CloseStatusCode)e.Code} Please re-login");
         }
 
         private void btn_Disconect_Click(object sender, EventArgs e)
@@ -189,19 +189,22 @@ namespace WebSocketClient
                     _webSocketClient.Close();
                     _webSocketClient.OnClose += _webSocketClient_OnClose;    
                 }
-                //
+
+                //同步服务器节点信息，一般就是你登录的endpoint
                 WsUserLoginRequest request = new WsUserLoginRequest();
                 request.IsEncrypted = ((int) this.num_login_isEncrypt.Value);
                 request.Password = txt_login_password.Text;
                 request.PhoneUuid = txt_phoneUUID.Text;
                 request.Username = txt_login_UserName.Text;
-
                 string jsonWsRequest = Newtonsoft.Json.JsonConvert.SerializeObject(request);
-
                 string websocketCommand =
-                    $"v1/websocket?t={jsonWsRequest}";
+                    $"/ws2/home_saas_ws_node_1?t={jsonWsRequest}";
+                txt_Cmd.Text = websocketCommand;
 
-               // txt_Cmd.Text = websocketCommand;
+                cmb_wss.SelectedIndex = cmb_schema.SelectedIndex;
+                txt_wsServer.Text = txt_login_Host.Text;
+                num_Port.Value = num_login_port.Value;
+
             }
             else
             {
@@ -273,7 +276,7 @@ namespace WebSocketClient
             input.IsAuto = bool.Parse(cmb_isAuto.SelectedItem.ToString());
 
             input.WS_CommdUrl = txt_Cmd.Text.Trim();
-            input.WS_Host = txt_Server.Text.Trim();
+            input.WS_Host = txt_wsServer.Text.Trim();
             input.WS_SendedContext = txt_Send.Text.Trim();
             input.WS_Port = num_Port.Value.ToString();
 
@@ -308,7 +311,7 @@ namespace WebSocketClient
             cmb_isAuto.SelectedIndex = input.IsAuto ? 0:1;
 
             txt_Cmd.Text = input.WS_CommdUrl;
-            txt_Server.Text = input.WS_Host;
+            txt_wsServer.Text = input.WS_Host;
             txt_Send.Text = input.WS_SendedContext;    
             num_Port.Value = decimal.Parse(input.WS_Port);
             ((Control)num_Port).Text = input.WS_Port;
@@ -348,8 +351,6 @@ namespace WebSocketClient
                 //X509Certificate2 cert = new X509Certificate2("client.pfx");
                 
                 opts.AddCertificate(cert);
-                 
-
                 conn = cf.CreateConnection(opts);
             }
             else

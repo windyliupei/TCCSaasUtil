@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebSocketTestClient));
-            this.txt_Server = new System.Windows.Forms.TextBox();
+            this.txt_wsServer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Send = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
@@ -124,11 +124,11 @@
             // 
             // txt_Server
             // 
-            this.txt_Server.Location = new System.Drawing.Point(142, 29);
-            this.txt_Server.Name = "txt_Server";
-            this.txt_Server.Size = new System.Drawing.Size(330, 21);
-            this.txt_Server.TabIndex = 0;
-            this.txt_Server.Text = "echo.websocket.org";
+            this.txt_wsServer.Location = new System.Drawing.Point(142, 29);
+            this.txt_wsServer.Name = "txt_Server";
+            this.txt_wsServer.Size = new System.Drawing.Size(330, 21);
+            this.txt_wsServer.TabIndex = 0;
+            this.txt_wsServer.Text = "echo.websocket.org";
             // 
             // label1
             // 
@@ -544,7 +544,7 @@
             this.tab_send.Controls.Add(this.label5);
             this.tab_send.Controls.Add(this.label1);
             this.tab_send.Controls.Add(this.txt_Cmd);
-            this.tab_send.Controls.Add(this.txt_Server);
+            this.tab_send.Controls.Add(this.txt_wsServer);
             this.tab_send.Controls.Add(this.label4);
             this.tab_send.Controls.Add(this.txt_Send);
             this.tab_send.Controls.Add(this.btn_Send);
@@ -1025,7 +1025,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_Server;
+        private System.Windows.Forms.TextBox txt_wsServer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Send;
         private System.Windows.Forms.Button btn_Clear;
