@@ -37,9 +37,6 @@
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="NATS.Client">
-      <HintPath>..\packages\NATS.Client.0.7.1\lib\net45\NATS.Client.DLL</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -137,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="test_info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\csharp-nats\net45\NATS.Client\NATS.Client.csproj">
+      <Project>{68ee71d4-9532-470e-b5ca-ecaa79936b1f}</Project>
+      <Name>NATS.Client</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
