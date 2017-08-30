@@ -337,21 +337,25 @@ namespace WebSocketClient
             {
                 Options opts = ConnectionFactory.GetDefaultOptions();
                 opts.Secure = true;
+#if DEBUG
+                opts.MaxPingsOut = int.MaxValue;
+                opts.Timeout = int.MaxValue;
+#endif
                 //opts.Servers = new[]
                 //    {$"nats://{txt_natHost.Text.Trim()}:{(int) num_NasPort.Value}"};
                 opts.Url = $"nats://{txt_natHost.Text.Trim()}:{(int) num_NasPort.Value}";
                 opts.TLSRemoteCertificationValidationCallback = TlsRemoteCertificationValidationCallback;
                 opts.User = "home";
                 opts.Password = "1qaz2wsx";
-                opts.Timeout = int.MaxValue;
+                
 
                 // .NET requires the private key and cert in the
                 //  same file. 'client.pfx' is generated from:
                 //
                 // openssl pkcs12 -export -out client.pfx -inkey clientkey.pem -in client.pem
 
-                //X509CertificateStore tstore = null;
-                X509Certificate2 cert = new X509Certificate2("clientcert.pfx", "111111");
+               
+                X509Certificate2 cert = new X509Certificate2("cert/clientcert.pfx_", "111111");
 
                 //X509Certificate2 rootCert = new X509Certificate2("rootcert.pem", "111111");
                 //X509Store store = new X509Store(StoreName.TrustedPeople, StoreLocation.LocalMachine);

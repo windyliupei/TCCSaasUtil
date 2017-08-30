@@ -526,7 +526,6 @@
             this.txt_login_Host.Name = "txt_login_Host";
             this.txt_login_Host.Size = new System.Drawing.Size(454, 20);
             this.txt_login_Host.TabIndex = 1;
-            this.txt_login_Host.Text = "qa.homecloud.honeywell.com.cn";
             // 
             // label6
             // 
@@ -726,11 +725,6 @@
             this.num_NasPort.Name = "num_NasPort";
             this.num_NasPort.Size = new System.Drawing.Size(100, 20);
             this.num_NasPort.TabIndex = 16;
-            this.num_NasPort.Value = new decimal(new int[] {
-            4222,
-            0,
-            0,
-            0});
             // 
             // txt_Nas_Topic
             // 
@@ -763,7 +757,6 @@
             this.txt_natHost.Name = "txt_natHost";
             this.txt_natHost.Size = new System.Drawing.Size(222, 20);
             this.txt_natHost.TabIndex = 12;
-            this.txt_natHost.Text = "localhost";
             // 
             // label14
             // 
