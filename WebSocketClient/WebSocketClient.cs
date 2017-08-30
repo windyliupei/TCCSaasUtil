@@ -343,16 +343,21 @@ namespace WebSocketClient
                 opts.TLSRemoteCertificationValidationCallback = TlsRemoteCertificationValidationCallback;
                 opts.User = "home";
                 opts.Password = "1qaz2wsx";
+                opts.Timeout = int.MaxValue;
 
                 // .NET requires the private key and cert in the
                 //  same file. 'client.pfx' is generated from:
                 //
-                // openssl pkcs12 -export -out client.pfx
-                //    -inkey client-key.pem -in client-cert.pem
+                // openssl pkcs12 -export -out client.pfx -inkey clientkey.pem -in client.pem
 
-                X509Certificate2 cert = new X509Certificate2("server.pkcs12",
-                    "111111");
+                //X509CertificateStore tstore = null;
+                X509Certificate2 cert = new X509Certificate2("clientcert.pfx", "111111");
 
+                //X509Certificate2 rootCert = new X509Certificate2("rootcert.pem", "111111");
+                //X509Store store = new X509Store(StoreName.TrustedPeople, StoreLocation.LocalMachine);
+                //store.Open(OpenFlags.ReadWrite);
+                //store.Add(rootCert); //where cert is an X509Certificate object
+                //store.Close();
 
                 opts.AddCertificate(cert);
                 conn = cf.CreateConnection(opts);

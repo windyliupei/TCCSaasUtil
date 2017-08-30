@@ -451,7 +451,7 @@ namespace NATS.Client
                 try
                 {
                     SslProtocols protocol = (SslProtocols)Enum.Parse(typeof(SslProtocols), "Tls12");
-                    sslStream.AuthenticateAsClientAsync(hostName, options.certificates, protocol, true).Wait();
+                    sslStream.AuthenticateAsClientAsync(hostName, options.certificates, protocol,false).Wait();
                 }
                 catch (Exception ex)
                 {

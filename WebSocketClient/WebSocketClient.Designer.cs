@@ -763,7 +763,7 @@
             this.txt_natHost.Name = "txt_natHost";
             this.txt_natHost.Size = new System.Drawing.Size(222, 20);
             this.txt_natHost.TabIndex = 12;
-            this.txt_natHost.Text = "115.159.114.116";
+            this.txt_natHost.Text = "localhost";
             // 
             // label14
             // 
