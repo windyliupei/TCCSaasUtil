@@ -48,6 +48,8 @@ namespace WebSocketClient
         /// 
         /// </summary>
         public UserInfo userInfo { get; set; }
+
+        public string[] wsUrl { get; set; }
     }
 
     public class LoginResponse
