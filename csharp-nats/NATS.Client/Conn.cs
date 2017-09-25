@@ -447,11 +447,14 @@ namespace NATS.Client
 
                 sslStream = new SslStream(stream, false, cb, null,
                     EncryptionPolicy.RequireEncryption);
-
                 try
                 {
                     SslProtocols protocol = (SslProtocols)Enum.Parse(typeof(SslProtocols), "Tls12");
-                    sslStream.AuthenticateAsClientAsync(hostName, options.certificates, protocol,false).Wait();
+                    //sslStream.AuthenticateAsClientAsync(hostName, options.certificates, protocol,false).Wait();
+
+                    sslStream.AuthenticateAsClient(hostName, options.certificates, protocol, false);
+                    var cipher = sslStream.CipherAlgorithm;
+                    Console.WriteLine(cipher.ToString());
                 }
                 catch (Exception ex)
                 {
