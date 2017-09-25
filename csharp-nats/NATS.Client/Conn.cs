@@ -452,7 +452,7 @@ namespace NATS.Client
                     SslProtocols protocol = (SslProtocols)Enum.Parse(typeof(SslProtocols), "Tls12");
                     //sslStream.AuthenticateAsClientAsync(hostName, options.certificates, protocol,false).Wait();
 
-                    sslStream.AuthenticateAsClient(hostName, options.certificates, protocol, false);
+                    sslStream.AuthenticateAsClient(hostName, options.certificates, protocol,true);
                     var cipher = sslStream.CipherAlgorithm;
                     Console.WriteLine(cipher.ToString());
                 }

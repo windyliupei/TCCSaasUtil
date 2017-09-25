@@ -41,6 +41,9 @@
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="NATS.Client, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NATS.Client.0.8.0\lib\net45\NATS.Client.DLL</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -109,6 +112,9 @@
     <None Include="cert\clientcert.pfx_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="cert\dotntClientcert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="cert\rootcert.pem" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,10 +138,6 @@
     <Content Include="test_info.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\csharp-nats\net45\NATS.Client\NATS.Client.csproj">
-      <Project>{68ee71d4-9532-470e-b5ca-ecaa79936b1f}</Project>
-      <Name>NATS.Client</Name>
-    </ProjectReference>
     <ProjectReference Include="..\websocket-sharp\websocket-sharp\websocket-sharp.csproj">
       <Project>{b357bac7-529e-4d81-a0d2-71041b19c8de}</Project>
       <Name>websocket-sharp</Name>
