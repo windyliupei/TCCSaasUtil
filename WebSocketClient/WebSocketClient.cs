@@ -160,18 +160,17 @@ namespace WebSocketClient
             string uri = txt_login_ReqUrl.Text;
             string url = string.Format("{0}{1}:{2}{3}",schema,host,port,uri);
             string postData = GetPostData();
-            
-            HttpClientOperation operation = new HttpClientOperation();
-            HttpContent content = new StringContent(postData);
-            HttpResponseMessage result = operation.SendRequestAsync(HttpMethod.Post, url, content, CancellationToken.None);
 
-            if (result.Content == null)
+            HttpContent content = new StringContent(postData);
+            HttpClientOperationAsync operation = new HttpClientOperationAsync(url, content);
+            Task<HttpResponseMessage> task = operation.PostAsync();
+            if (task.Result.Content == null)
             {
                 MessageBox.Show("WTK!!!!");
                 return;
             }
 
-            string loginResult = result.Content.ReadAsStringAsync().Result;
+            string loginResult = task.Result.Content.ReadAsStringAsync().Result;
             _loginResponse = JsonConvert.DeserializeObject<LoginResponse>(loginResult);
 
             if (_loginResponse != null && _loginResponse.errorCode == 0 && _loginResponse.errorMsg == "Success")
@@ -205,6 +204,10 @@ namespace WebSocketClient
                 cmb_wss.SelectedIndex = cmb_schema.SelectedIndex;
                 txt_wsServer.Text = txt_login_Host.Text;
                 num_Port.Value = num_login_port.Value;
+
+                cmb_ApiAchema.SelectedIndex = cmb_schema.SelectedIndex;
+                txt_ApiHost.Text = txt_login_Host.Text;
+                num_ApiPort.Value = num_login_port.Value;
 
             }
             else
@@ -354,18 +357,8 @@ namespace WebSocketClient
                 //  same file. 'client.pfx' is generated from:
                 //
                 // openssl pkcs12 -export -out client.pfx -inkey clientkey.pem -in client.pem
-
-
-                //X509Certificate2 cert = new X509Certificate2("cert/clientcert.pfx_", "111111");
-                X509Certificate2 cert = new X509Certificate2("cert/dotntClientcert.pfx", "111111");
-                //X509Certificate2 cert = new X509Certificate2("cert/clientcert.pfx", "111111");
-
-                //X509Certificate2 rootCert = new X509Certificate2("rootcert.pem", "111111");
-                //X509Store store = new X509Store(StoreName.TrustedPeople, StoreLocation.LocalMachine);
-                //store.Open(OpenFlags.ReadWrite);
-                //store.Add(rootCert); //where cert is an X509Certificate object
-                //store.Close();
-
+                X509Certificate2 cert = new X509Certificate2("cert/dotntClientcert.pfx_", "111111");
+                
                 opts.AddCertificate(cert);
                 conn = cf.CreateConnection(opts);
             }
@@ -458,63 +451,58 @@ namespace WebSocketClient
             int port = (int)num_ApiPort.Value;
             string uri = txt_ApiAction.Text;
             string url = string.Format("{0}{1}:{2}{3}", schema, host, port, uri);
-             
 
-            HttpMethod httpMethod = HttpMethod.Post;
+            HttpContent content = new StringContent(txt_ApiSend.Text);
+
+            //Set hearders
+            Dictionary<string, string> hearders = new Dictionary<string, string>();
+
+            List<Cookie> cookies = new List<Cookie>();
+            Cookie cookie = new Cookie("SESSION", _loginResponse.data.sessionId, "/", txt_ApiHost.Text);
+            cookies.Add(cookie);
+
+            HttpClientOperationAsync operationAsync = new HttpClientOperationAsync(url, content, hearders, cookies);
             string selectedHttpMethod = cmb_HttpMethod.SelectedItem.ToString();
-
+            Task<HttpResponseMessage> task = null;
             switch (selectedHttpMethod)
             {
                 case "POST":
                 {
-                    httpMethod = HttpMethod.Post;
+                    task =operationAsync.PostAsync();
                     break;
                 }
                 case "GET":
                 {
-                    httpMethod = HttpMethod.Get;
+                    task = operationAsync.GetAsync();
                     break;
                 }
                 case "DELETE":
                 {
-                    httpMethod = HttpMethod.Delete;
+                    task = operationAsync.DeleteAsync();
                     break;
                 }
                 case "PUT":
                 {
-                    httpMethod = HttpMethod.Post;
+                    task = operationAsync.PutAsync(); 
                     break;
                 }
                 default:
-                    httpMethod = HttpMethod.Post;
+                     
                     break;
             }
 
-            HttpClientOperation operation = new HttpClientOperation();
-            HttpContent content = new StringContent(txt_ApiSend.Text);
-
-            //Set hearders
-            Dictionary<string,string> hearder = new Dictionary<string, string>();
-            
-            
-            //
-            List<Cookie> cookies = new List<Cookie>();
-            //Cookie cookie = new Cookie("SESSIONID",_loginResponse.data.sessionId,"/",txt_ApiHost.Text);
-            Cookie cookie = new Cookie("SESSION", _loginResponse.data.sessionId, "/", txt_ApiHost.Text);
-            cookies.Add(cookie);
-
-            HttpResponseMessage result = operation.SendRequestAsync(httpMethod, url, content, CancellationToken.None, "application/json", hearder, cookies);
-
-            if (result.Content == null)
+            if (task != null && task.Result.Content == null)
             {
                 MessageBox.Show("WTK!!!!");
                 return;
             }
 
-            string httpResponse = result.Content.ReadAsStringAsync().Result;
+            if (task != null)
+            {
+                string httpResponse = task.Result.Content.ReadAsStringAsync().Result;
 
-            txt_ApiReceive.Text = httpResponse;
-            
+                txt_ApiReceive.Text = httpResponse;
+            }
         }
 
 

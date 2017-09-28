@@ -38,14 +38,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="NATS.Client, Version=0.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NATS.Client.0.8.0\lib\net45\NATS.Client.DLL</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpClientOperation.cs" />
+    <Compile Include="HttpClientOperationAsync.cs" />
     <Compile Include="InputSetting.cs" />
     <Compile Include="LoadSettingsWindow.cs">
       <SubType>Form</SubType>
@@ -109,13 +110,9 @@
     <EmbeddedResource Include="WebSocketClient.resx">
       <DependentUpon>WebSocketClient.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="cert\clientcert.pfx_">
+    <None Include="cert\dotntClientcert.pfx_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="cert\dotntClientcert.pfx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="cert\rootcert.pem" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

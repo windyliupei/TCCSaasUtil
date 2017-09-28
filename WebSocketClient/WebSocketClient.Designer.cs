@@ -526,6 +526,7 @@
             this.txt_login_Host.Name = "txt_login_Host";
             this.txt_login_Host.Size = new System.Drawing.Size(454, 20);
             this.txt_login_Host.TabIndex = 1;
+            this.txt_login_Host.Text = "qa.homecloud.honeywell.com.cn";
             // 
             // label6
             // 
@@ -802,7 +803,7 @@
             "GET",
             "PUT",
             "DELETE"});
-            this.cmb_HttpMethod.Location = new System.Drawing.Point(8, 48);
+            this.cmb_HttpMethod.Location = new System.Drawing.Point(111, 74);
             this.cmb_HttpMethod.Name = "cmb_HttpMethod";
             this.cmb_HttpMethod.Size = new System.Drawing.Size(97, 21);
             this.cmb_HttpMethod.TabIndex = 26;
@@ -811,11 +812,11 @@
             // 
             this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiSend.Location = new System.Drawing.Point(8, 111);
+            this.txt_ApiSend.Location = new System.Drawing.Point(8, 132);
             this.txt_ApiSend.Multiline = true;
             this.txt_ApiSend.Name = "txt_ApiSend";
             this.txt_ApiSend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_ApiSend.Size = new System.Drawing.Size(573, 160);
+            this.txt_ApiSend.Size = new System.Drawing.Size(573, 139);
             this.txt_ApiSend.TabIndex = 22;
             // 
             // label23
@@ -830,7 +831,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(8, 95);
+            this.label24.Location = new System.Drawing.Point(8, 116);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(74, 13);
             this.label24.TabIndex = 24;
@@ -873,7 +874,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(250, 15);
+            this.label22.Location = new System.Drawing.Point(474, 17);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(26, 13);
             this.label22.TabIndex = 16;
@@ -883,7 +884,7 @@
             // 
             this.txt_ApiAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiAction.Location = new System.Drawing.Point(345, 11);
+            this.txt_ApiAction.Location = new System.Drawing.Point(111, 48);
             this.txt_ApiAction.Name = "txt_ApiAction";
             this.txt_ApiAction.Size = new System.Drawing.Size(218, 20);
             this.txt_ApiAction.TabIndex = 15;
@@ -893,13 +894,13 @@
             // 
             this.txt_ApiHost.Location = new System.Drawing.Point(111, 12);
             this.txt_ApiHost.Name = "txt_ApiHost";
-            this.txt_ApiHost.Size = new System.Drawing.Size(121, 20);
+            this.txt_ApiHost.Size = new System.Drawing.Size(348, 20);
             this.txt_ApiHost.TabIndex = 12;
             this.txt_ApiHost.Text = "localhost";
             // 
             // num_ApiPort
             // 
-            this.num_ApiPort.Location = new System.Drawing.Point(282, 11);
+            this.num_ApiPort.Location = new System.Drawing.Point(506, 13);
             this.num_ApiPort.Maximum = new decimal(new int[] {
             65535,
             0,
