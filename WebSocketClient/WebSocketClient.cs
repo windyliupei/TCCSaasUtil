@@ -196,9 +196,11 @@ namespace WebSocketClient
                 request.PhoneUuid = txt_phoneUUID.Text;
                 request.Username = txt_login_UserName.Text;
                 string jsonWsRequest = Newtonsoft.Json.JsonConvert.SerializeObject(request);
-                
+
+                //string websocketCommand =
+                //    $"{_loginResponse.data.wsUrl.First()}?t={jsonWsRequest}";
                 string websocketCommand =
-                    $"{_loginResponse.data.wsUrl.First()}?t={jsonWsRequest}";
+                    $"{"/v1/websocket"}?t={jsonWsRequest}";
                 txt_Cmd.Text = websocketCommand;
 
                 cmb_wss.SelectedIndex = cmb_schema.SelectedIndex;
