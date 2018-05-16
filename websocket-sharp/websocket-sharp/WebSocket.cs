@@ -153,7 +153,7 @@ namespace WebSocketSharp
     {
       _maxRetryCountForConnect = 10;
       EmptyBytes = new byte[0];
-      FragmentLength = 1016;
+      FragmentLength = 1024*1024*2;
       RandomNumber = new RNGCryptoServiceProvider ();
 
       ServicePointManager.SecurityProtocol =

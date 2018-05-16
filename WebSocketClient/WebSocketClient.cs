@@ -161,19 +161,30 @@ namespace WebSocketClient
             string url = string.Format("{0}{1}:{2}{3}",schema,host,port,uri);
             string postData = GetPostData();
 
+            //After V2 we need to request 'http://localhost:8082/v1/api/user/encryptInfo'
+            //at first.
+
+            string encryptReq = "{\"username\":\""+txt_login_UserName.Text+"\",\"applicationID\":\"237b42b-0ce7-4582-830c-34d930b1fd52\"}";
+            HttpContent encryptContent = new StringContent(encryptReq);
+            string encryUrl = string.Format("{0}{1}:{2}{3}", schema, host, port, "/v1/api/user/encryptInfo");
+            HttpClientOperationAsync encryOperation = new HttpClientOperationAsync(encryUrl, encryptContent);
+            Task<HttpResponseMessage> encrtyTask = encryOperation.PostAsync();
+            var encryQueryResult = encrtyTask.Result;
+
+
             HttpContent content = new StringContent(postData);
             HttpClientOperationAsync operation = new HttpClientOperationAsync(url, content);
             Task<HttpResponseMessage> task = operation.PostAsync();
             if (task.Result.Content == null)
             {
-                MessageBox.Show("WTK!!!!");
+                MessageBox.Show("WTF!!!!");
                 return;
             }
 
             string loginResult = task.Result.Content.ReadAsStringAsync().Result;
             _loginResponse = JsonConvert.DeserializeObject<LoginResponse>(loginResult);
 
-            if (_loginResponse != null && _loginResponse.errorCode == 0 && _loginResponse.errorMsg == "Success")
+            if (_loginResponse != null && _loginResponse.errorCode == 0 && _loginResponse.data.sessionId.Length>1)
             {
                 MessageBox.Show($"Login Success, session id:{_loginResponse.data.sessionId}");
                 toolStripStatusLabel2.ForeColor = Color.Green;
@@ -195,17 +206,24 @@ namespace WebSocketClient
                 request.Password = txt_login_password.Text;
                 request.PhoneUuid = txt_phoneUUID.Text;
                 request.Username = txt_login_UserName.Text;
+                string websocketCommand = string.Empty;
                 string jsonWsRequest = Newtonsoft.Json.JsonConvert.SerializeObject(request);
-
-                //string websocketCommand =
-                //    $"{_loginResponse.data.wsUrl.First()}?t={jsonWsRequest}";
-                string websocketCommand =
-                    $"{"/v1/websocket"}?t={jsonWsRequest}";
+                if (_loginResponse.data.wsUrl.Length > 0)
+                {
+                    websocketCommand =
+                        $"{_loginResponse.data.wsUrl.First()}?t={jsonWsRequest}";    
+                }
+                else
+                {
+                    websocketCommand =
+                        $"{"/v1/websocket"}?t={jsonWsRequest}";
+                }
+                
                 txt_Cmd.Text = websocketCommand;
 
                 cmb_wss.SelectedIndex = cmb_schema.SelectedIndex;
                 txt_wsServer.Text = txt_login_Host.Text;
-                num_Port.Value = num_login_port.Value;
+                num_Port.Value = num_login_port.Value+1;
 
                 cmb_ApiAchema.SelectedIndex = cmb_schema.SelectedIndex;
                 txt_ApiHost.Text = txt_login_Host.Text;
@@ -424,9 +442,11 @@ namespace WebSocketClient
                 return;
             }
 
-                       
-            sAsync = conn.SubscribeAsync(txt_Nas_Topic.Text.Trim());
-            
+            string topic = txt_Nas_Topic.Text.Trim();
+            //string group = "balance";
+            //sAsync = conn.SubscribeAsync(topic, group);
+            sAsync = conn.SubscribeAsync(topic);
+
             sAsync.MessageHandler += (nat_Sender, nat_e) =>
             {
                 txt_Nas_received.AppendText(string.Format("-----Received at:{0}-----", DateTime.Now));
