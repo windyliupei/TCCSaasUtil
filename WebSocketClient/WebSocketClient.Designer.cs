@@ -68,19 +68,22 @@
             this.txt_login_Host = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tab_send = new System.Windows.Forms.TabPage();
+            this.btn_SaveLog = new System.Windows.Forms.Button();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.cmb_wss = new System.Windows.Forms.ComboBox();
             this.chk_needLogin = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tab_nats = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txt_Nas_SendContext = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt_Nas_received = new System.Windows.Forms.TextBox();
             this.chk_natTls = new System.Windows.Forms.CheckBox();
             this.btn_Nas_Sub = new System.Windows.Forms.Button();
             this.btn_Nas_Disconn = new System.Windows.Forms.Button();
             this.btn_Nas_Connection = new System.Windows.Forms.Button();
-            this.txt_Nas_received = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.btn_Nas_Send = new System.Windows.Forms.Button();
-            this.txt_Nas_SendContext = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.num_NasPort = new System.Windows.Forms.NumericUpDown();
             this.txt_Nas_Topic = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -88,11 +91,13 @@
             this.txt_natHost = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabApi = new System.Windows.Forms.TabPage();
-            this.cmb_HttpMethod = new System.Windows.Forms.ComboBox();
+            this.btn_saveApiLog = new System.Windows.Forms.Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.txt_ApiSend = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.txt_ApiReceive = new System.Windows.Forms.TextBox();
+            this.cmb_HttpMethod = new System.Windows.Forms.ComboBox();
             this.btn_SendApi = new System.Windows.Forms.Button();
             this.cmb_ApiAchema = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -114,9 +119,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_login_isEncrypt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_login_port)).BeginInit();
             this.tab_send.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.tab_nats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_NasPort)).BeginInit();
             this.tabApi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_ApiPort)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -142,7 +159,7 @@
             // btn_Send
             // 
             this.btn_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Send.Location = new System.Drawing.Point(402, 122);
+            this.btn_Send.Location = new System.Drawing.Point(421, 134);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(75, 23);
             this.btn_Send.TabIndex = 2;
@@ -154,7 +171,7 @@
             // btn_Clear
             // 
             this.btn_Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Clear.Location = new System.Drawing.Point(492, 122);
+            this.btn_Clear.Location = new System.Drawing.Point(583, 91);
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(75, 23);
             this.btn_Clear.TabIndex = 2;
@@ -164,13 +181,14 @@
             // 
             // txt_Send
             // 
-            this.txt_Send.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Send.Location = new System.Drawing.Point(6, 176);
+            this.txt_Send.Location = new System.Drawing.Point(6, 44);
             this.txt_Send.Multiline = true;
             this.txt_Send.Name = "txt_Send";
             this.txt_Send.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Send.Size = new System.Drawing.Size(573, 125);
+            this.txt_Send.Size = new System.Drawing.Size(673, 152);
             this.txt_Send.TabIndex = 0;
             // 
             // txt_Received
@@ -178,17 +196,17 @@
             this.txt_Received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Received.Location = new System.Drawing.Point(6, 329);
+            this.txt_Received.Location = new System.Drawing.Point(6, 25);
             this.txt_Received.Multiline = true;
             this.txt_Received.Name = "txt_Received";
             this.txt_Received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Received.Size = new System.Drawing.Size(573, 128);
+            this.txt_Received.Size = new System.Drawing.Size(673, 169);
             this.txt_Received.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 159);
+            this.label2.Location = new System.Drawing.Point(3, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 4;
@@ -197,7 +215,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 313);
+            this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 5;
@@ -206,7 +224,7 @@
             // btn_Conect
             // 
             this.btn_Conect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Conect.Location = new System.Drawing.Point(228, 122);
+            this.btn_Conect.Location = new System.Drawing.Point(421, 91);
             this.btn_Conect.Name = "btn_Conect";
             this.btn_Conect.Size = new System.Drawing.Size(75, 23);
             this.btn_Conect.TabIndex = 2;
@@ -217,7 +235,7 @@
             // btn_Disconect
             // 
             this.btn_Disconect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Disconect.Location = new System.Drawing.Point(315, 122);
+            this.btn_Disconect.Location = new System.Drawing.Point(502, 91);
             this.btn_Disconect.Name = "btn_Disconect";
             this.btn_Disconect.Size = new System.Drawing.Size(75, 23);
             this.btn_Disconect.TabIndex = 2;
@@ -257,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Cmd.Location = new System.Drawing.Point(141, 65);
             this.txt_Cmd.Name = "txt_Cmd";
-            this.txt_Cmd.Size = new System.Drawing.Size(426, 20);
+            this.txt_Cmd.Size = new System.Drawing.Size(517, 20);
             this.txt_Cmd.TabIndex = 10;
             // 
             // tabControl1
@@ -272,7 +290,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(595, 497);
+            this.tabControl1.Size = new System.Drawing.Size(720, 595);
             this.tabControl1.TabIndex = 11;
             // 
             // tab_login
@@ -303,7 +321,7 @@
             this.tab_login.Location = new System.Drawing.Point(4, 22);
             this.tab_login.Name = "tab_login";
             this.tab_login.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_login.Size = new System.Drawing.Size(587, 471);
+            this.tab_login.Size = new System.Drawing.Size(712, 569);
             this.tab_login.TabIndex = 0;
             this.tab_login.Text = "Login";
             this.tab_login.UseVisualStyleBackColor = true;
@@ -382,7 +400,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_phoneUUID.Location = new System.Drawing.Point(85, 350);
             this.txt_phoneUUID.Name = "txt_phoneUUID";
-            this.txt_phoneUUID.Size = new System.Drawing.Size(454, 20);
+            this.txt_phoneUUID.Size = new System.Drawing.Size(607, 20);
             this.txt_phoneUUID.TabIndex = 16;
             this.txt_phoneUUID.Text = "237b42b-0ce7-4582-830c-34d930b1fd52";
             // 
@@ -392,7 +410,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Application.Location = new System.Drawing.Point(85, 299);
             this.txt_Application.Name = "txt_Application";
-            this.txt_Application.Size = new System.Drawing.Size(454, 20);
+            this.txt_Application.Size = new System.Drawing.Size(607, 20);
             this.txt_Application.TabIndex = 16;
             this.txt_Application.Text = "237b42b-0ce7-4582-830c-34d930b1fd52";
             // 
@@ -431,7 +449,7 @@
             // btn_login_login
             // 
             this.btn_login_login.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_login_login.Location = new System.Drawing.Point(464, 388);
+            this.btn_login_login.Location = new System.Drawing.Point(617, 432);
             this.btn_login_login.Name = "btn_login_login";
             this.btn_login_login.Size = new System.Drawing.Size(75, 23);
             this.btn_login_login.TabIndex = 11;
@@ -496,7 +514,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_login_ReqUrl.Location = new System.Drawing.Point(85, 151);
             this.txt_login_ReqUrl.Name = "txt_login_ReqUrl";
-            this.txt_login_ReqUrl.Size = new System.Drawing.Size(454, 20);
+            this.txt_login_ReqUrl.Size = new System.Drawing.Size(607, 20);
             this.txt_login_ReqUrl.TabIndex = 5;
             this.txt_login_ReqUrl.Text = "/v1/api/user/login";
             // 
@@ -524,7 +542,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_login_Host.Location = new System.Drawing.Point(85, 78);
             this.txt_login_Host.Name = "txt_login_Host";
-            this.txt_login_Host.Size = new System.Drawing.Size(454, 20);
+            this.txt_login_Host.Size = new System.Drawing.Size(607, 20);
             this.txt_login_Host.TabIndex = 1;
             this.txt_login_Host.Text = "qa.homecloud.honeywell.com.cn";
             // 
@@ -539,6 +557,8 @@
             // 
             // tab_send
             // 
+            this.tab_send.Controls.Add(this.btn_SaveLog);
+            this.tab_send.Controls.Add(this.splitContainer3);
             this.tab_send.Controls.Add(this.cmb_wss);
             this.tab_send.Controls.Add(this.chk_needLogin);
             this.tab_send.Controls.Add(this.label5);
@@ -546,22 +566,51 @@
             this.tab_send.Controls.Add(this.txt_Cmd);
             this.tab_send.Controls.Add(this.txt_wsServer);
             this.tab_send.Controls.Add(this.label4);
-            this.tab_send.Controls.Add(this.txt_Send);
             this.tab_send.Controls.Add(this.btn_Send);
             this.tab_send.Controls.Add(this.num_Port);
             this.tab_send.Controls.Add(this.btn_Conect);
-            this.tab_send.Controls.Add(this.label3);
             this.tab_send.Controls.Add(this.btn_Clear);
-            this.tab_send.Controls.Add(this.label2);
             this.tab_send.Controls.Add(this.btn_Disconect);
-            this.tab_send.Controls.Add(this.txt_Received);
             this.tab_send.Location = new System.Drawing.Point(4, 22);
             this.tab_send.Name = "tab_send";
             this.tab_send.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_send.Size = new System.Drawing.Size(587, 471);
+            this.tab_send.Size = new System.Drawing.Size(712, 569);
             this.tab_send.TabIndex = 1;
             this.tab_send.Text = "Web Socket Send";
             this.tab_send.UseVisualStyleBackColor = true;
+            // 
+            // btn_SaveLog
+            // 
+            this.btn_SaveLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_SaveLog.Location = new System.Drawing.Point(583, 134);
+            this.btn_SaveLog.Name = "btn_SaveLog";
+            this.btn_SaveLog.Size = new System.Drawing.Size(75, 23);
+            this.btn_SaveLog.TabIndex = 15;
+            this.btn_SaveLog.Text = "Save Log";
+            this.btn_SaveLog.UseVisualStyleBackColor = true;
+            this.btn_SaveLog.Click += new System.EventHandler(this.btn_SaveLog_Click);
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer3.Location = new System.Drawing.Point(12, 163);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.label2);
+            this.splitContainer3.Panel1.Controls.Add(this.txt_Send);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.label3);
+            this.splitContainer3.Panel2.Controls.Add(this.txt_Received);
+            this.splitContainer3.Size = new System.Drawing.Size(692, 400);
+            this.splitContainer3.SplitterDistance = 199;
+            this.splitContainer3.TabIndex = 14;
             // 
             // cmb_wss
             // 
@@ -597,15 +646,12 @@
             // 
             // tab_nats
             // 
+            this.tab_nats.Controls.Add(this.splitContainer1);
             this.tab_nats.Controls.Add(this.chk_natTls);
             this.tab_nats.Controls.Add(this.btn_Nas_Sub);
             this.tab_nats.Controls.Add(this.btn_Nas_Disconn);
             this.tab_nats.Controls.Add(this.btn_Nas_Connection);
-            this.tab_nats.Controls.Add(this.txt_Nas_received);
-            this.tab_nats.Controls.Add(this.label16);
             this.tab_nats.Controls.Add(this.btn_Nas_Send);
-            this.tab_nats.Controls.Add(this.txt_Nas_SendContext);
-            this.tab_nats.Controls.Add(this.label15);
             this.tab_nats.Controls.Add(this.num_NasPort);
             this.tab_nats.Controls.Add(this.txt_Nas_Topic);
             this.tab_nats.Controls.Add(this.label12);
@@ -614,17 +660,79 @@
             this.tab_nats.Controls.Add(this.label14);
             this.tab_nats.Location = new System.Drawing.Point(4, 22);
             this.tab_nats.Name = "tab_nats";
-            this.tab_nats.Size = new System.Drawing.Size(587, 471);
+            this.tab_nats.Size = new System.Drawing.Size(712, 569);
             this.tab_nats.TabIndex = 2;
             this.tab_nats.Text = "Nats";
             this.tab_nats.UseVisualStyleBackColor = true;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(11, 144);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.txt_Nas_SendContext);
+            this.splitContainer1.Panel1.Controls.Add(this.label15);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label16);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_Nas_received);
+            this.splitContainer1.Size = new System.Drawing.Size(659, 335);
+            this.splitContainer1.SplitterDistance = 167;
+            this.splitContainer1.TabIndex = 27;
+            // 
+            // txt_Nas_SendContext
+            // 
+            this.txt_Nas_SendContext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Nas_SendContext.Location = new System.Drawing.Point(6, 25);
+            this.txt_Nas_SendContext.Multiline = true;
+            this.txt_Nas_SendContext.Name = "txt_Nas_SendContext";
+            this.txt_Nas_SendContext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_Nas_SendContext.Size = new System.Drawing.Size(640, 139);
+            this.txt_Nas_SendContext.TabIndex = 17;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(74, 13);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Send Context:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Received Context:";
+            // 
+            // txt_Nas_received
+            // 
+            this.txt_Nas_received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Nas_received.Location = new System.Drawing.Point(6, 16);
+            this.txt_Nas_received.Multiline = true;
+            this.txt_Nas_received.Name = "txt_Nas_received";
+            this.txt_Nas_received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_Nas_received.Size = new System.Drawing.Size(640, 136);
+            this.txt_Nas_received.TabIndex = 21;
+            // 
             // chk_natTls
             // 
             this.chk_natTls.AutoSize = true;
-            this.chk_natTls.Checked = true;
-            this.chk_natTls.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_natTls.Location = new System.Drawing.Point(415, 106);
+            this.chk_natTls.Location = new System.Drawing.Point(207, 70);
             this.chk_natTls.Name = "chk_natTls";
             this.chk_natTls.Size = new System.Drawing.Size(40, 17);
             this.chk_natTls.TabIndex = 26;
@@ -633,8 +741,9 @@
             // 
             // btn_Nas_Sub
             // 
+            this.btn_Nas_Sub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Nas_Sub.Enabled = false;
-            this.btn_Nas_Sub.Location = new System.Drawing.Point(504, 64);
+            this.btn_Nas_Sub.Location = new System.Drawing.Point(579, 99);
             this.btn_Nas_Sub.Name = "btn_Nas_Sub";
             this.btn_Nas_Sub.Size = new System.Drawing.Size(75, 23);
             this.btn_Nas_Sub.TabIndex = 25;
@@ -644,8 +753,9 @@
             // 
             // btn_Nas_Disconn
             // 
+            this.btn_Nas_Disconn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Nas_Disconn.Enabled = false;
-            this.btn_Nas_Disconn.Location = new System.Drawing.Point(504, 23);
+            this.btn_Nas_Disconn.Location = new System.Drawing.Point(579, 58);
             this.btn_Nas_Disconn.Name = "btn_Nas_Disconn";
             this.btn_Nas_Disconn.Size = new System.Drawing.Size(75, 23);
             this.btn_Nas_Disconn.TabIndex = 24;
@@ -655,7 +765,8 @@
             // 
             // btn_Nas_Connection
             // 
-            this.btn_Nas_Connection.Location = new System.Drawing.Point(415, 24);
+            this.btn_Nas_Connection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Nas_Connection.Location = new System.Drawing.Point(490, 59);
             this.btn_Nas_Connection.Name = "btn_Nas_Connection";
             this.btn_Nas_Connection.Size = new System.Drawing.Size(75, 23);
             this.btn_Nas_Connection.TabIndex = 23;
@@ -663,57 +774,17 @@
             this.btn_Nas_Connection.UseVisualStyleBackColor = true;
             this.btn_Nas_Connection.Click += new System.EventHandler(this.btn_Nas_Connection_Click);
             // 
-            // txt_Nas_received
-            // 
-            this.txt_Nas_received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Nas_received.Location = new System.Drawing.Point(8, 322);
-            this.txt_Nas_received.Multiline = true;
-            this.txt_Nas_received.Name = "txt_Nas_received";
-            this.txt_Nas_received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_received.Size = new System.Drawing.Size(571, 146);
-            this.txt_Nas_received.TabIndex = 21;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(5, 306);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 13);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Received Context:";
-            // 
             // btn_Nas_Send
             // 
+            this.btn_Nas_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Nas_Send.Enabled = false;
-            this.btn_Nas_Send.Location = new System.Drawing.Point(415, 64);
+            this.btn_Nas_Send.Location = new System.Drawing.Point(490, 99);
             this.btn_Nas_Send.Name = "btn_Nas_Send";
             this.btn_Nas_Send.Size = new System.Drawing.Size(75, 23);
             this.btn_Nas_Send.TabIndex = 19;
             this.btn_Nas_Send.Text = "Pub";
             this.btn_Nas_Send.UseVisualStyleBackColor = true;
             this.btn_Nas_Send.Click += new System.EventHandler(this.btn_Nas_Send_Click);
-            // 
-            // txt_Nas_SendContext
-            // 
-            this.txt_Nas_SendContext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Nas_SendContext.Location = new System.Drawing.Point(8, 144);
-            this.txt_Nas_SendContext.Multiline = true;
-            this.txt_Nas_SendContext.Name = "txt_Nas_SendContext";
-            this.txt_Nas_SendContext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_SendContext.Size = new System.Drawing.Size(571, 159);
-            this.txt_Nas_SendContext.TabIndex = 17;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(5, 128);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Send Context:";
             // 
             // num_NasPort
             // 
@@ -734,10 +805,13 @@
             // 
             // txt_Nas_Topic
             // 
+            this.txt_Nas_Topic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nas_Topic.Location = new System.Drawing.Point(85, 99);
             this.txt_Nas_Topic.Name = "txt_Nas_Topic";
-            this.txt_Nas_Topic.Size = new System.Drawing.Size(222, 20);
+            this.txt_Nas_Topic.Size = new System.Drawing.Size(372, 20);
             this.txt_Nas_Topic.TabIndex = 15;
+            this.txt_Nas_Topic.Text = "toIot.>";
             // 
             // label12
             // 
@@ -763,7 +837,7 @@
             this.txt_natHost.Name = "txt_natHost";
             this.txt_natHost.Size = new System.Drawing.Size(222, 20);
             this.txt_natHost.TabIndex = 12;
-            this.txt_natHost.Text = "sslgnats.homecloud.honeywell.com.cn";
+            this.txt_natHost.Text = "127.0.0.1";
             // 
             // label14
             // 
@@ -776,11 +850,9 @@
             // 
             // tabApi
             // 
+            this.tabApi.Controls.Add(this.btn_saveApiLog);
+            this.tabApi.Controls.Add(this.splitContainer2);
             this.tabApi.Controls.Add(this.cmb_HttpMethod);
-            this.tabApi.Controls.Add(this.txt_ApiSend);
-            this.tabApi.Controls.Add(this.label23);
-            this.tabApi.Controls.Add(this.label24);
-            this.tabApi.Controls.Add(this.txt_ApiReceive);
             this.tabApi.Controls.Add(this.btn_SendApi);
             this.tabApi.Controls.Add(this.cmb_ApiAchema);
             this.tabApi.Controls.Add(this.label22);
@@ -790,10 +862,85 @@
             this.tabApi.Location = new System.Drawing.Point(4, 22);
             this.tabApi.Name = "tabApi";
             this.tabApi.Padding = new System.Windows.Forms.Padding(3);
-            this.tabApi.Size = new System.Drawing.Size(587, 471);
+            this.tabApi.Size = new System.Drawing.Size(712, 569);
             this.tabApi.TabIndex = 3;
             this.tabApi.Text = "WebApi";
             this.tabApi.UseVisualStyleBackColor = true;
+            // 
+            // btn_saveApiLog
+            // 
+            this.btn_saveApiLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_saveApiLog.Location = new System.Drawing.Point(626, 95);
+            this.btn_saveApiLog.Name = "btn_saveApiLog";
+            this.btn_saveApiLog.Size = new System.Drawing.Size(75, 23);
+            this.btn_saveApiLog.TabIndex = 28;
+            this.btn_saveApiLog.Text = "Save Log";
+            this.btn_saveApiLog.UseVisualStyleBackColor = true;
+            this.btn_saveApiLog.Click += new System.EventHandler(this.btn_saveApiLog_Click);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.Location = new System.Drawing.Point(8, 124);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.txt_ApiSend);
+            this.splitContainer2.Panel1.Controls.Add(this.label24);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.label23);
+            this.splitContainer2.Panel2.Controls.Add(this.txt_ApiReceive);
+            this.splitContainer2.Size = new System.Drawing.Size(696, 396);
+            this.splitContainer2.SplitterDistance = 197;
+            this.splitContainer2.TabIndex = 27;
+            // 
+            // txt_ApiSend
+            // 
+            this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ApiSend.Location = new System.Drawing.Point(6, 24);
+            this.txt_ApiSend.Multiline = true;
+            this.txt_ApiSend.Name = "txt_ApiSend";
+            this.txt_ApiSend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_ApiSend.Size = new System.Drawing.Size(671, 170);
+            this.txt_ApiSend.TabIndex = 22;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(4, 8);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 13);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "Send Context:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(3, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(95, 13);
+            this.label23.TabIndex = 25;
+            this.label23.Text = "Received Context:";
+            // 
+            // txt_ApiReceive
+            // 
+            this.txt_ApiReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ApiReceive.Location = new System.Drawing.Point(7, 25);
+            this.txt_ApiReceive.Multiline = true;
+            this.txt_ApiReceive.Name = "txt_ApiReceive";
+            this.txt_ApiReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_ApiReceive.Size = new System.Drawing.Size(670, 167);
+            this.txt_ApiReceive.TabIndex = 23;
             // 
             // cmb_HttpMethod
             // 
@@ -808,51 +955,10 @@
             this.cmb_HttpMethod.Size = new System.Drawing.Size(97, 21);
             this.cmb_HttpMethod.TabIndex = 26;
             // 
-            // txt_ApiSend
-            // 
-            this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiSend.Location = new System.Drawing.Point(8, 132);
-            this.txt_ApiSend.Multiline = true;
-            this.txt_ApiSend.Name = "txt_ApiSend";
-            this.txt_ApiSend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_ApiSend.Size = new System.Drawing.Size(573, 139);
-            this.txt_ApiSend.TabIndex = 22;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 283);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 13);
-            this.label23.TabIndex = 25;
-            this.label23.Text = "Received Context:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(8, 116);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 13);
-            this.label24.TabIndex = 24;
-            this.label24.Text = "Send Context:";
-            // 
-            // txt_ApiReceive
-            // 
-            this.txt_ApiReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiReceive.Location = new System.Drawing.Point(8, 299);
-            this.txt_ApiReceive.Multiline = true;
-            this.txt_ApiReceive.Name = "txt_ApiReceive";
-            this.txt_ApiReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_ApiReceive.Size = new System.Drawing.Size(573, 128);
-            this.txt_ApiReceive.TabIndex = 23;
-            // 
             // btn_SendApi
             // 
-            this.btn_SendApi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SendApi.Location = new System.Drawing.Point(506, 442);
+            this.btn_SendApi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_SendApi.Location = new System.Drawing.Point(545, 95);
             this.btn_SendApi.Name = "btn_SendApi";
             this.btn_SendApi.Size = new System.Drawing.Size(75, 23);
             this.btn_SendApi.TabIndex = 21;
@@ -886,7 +992,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ApiAction.Location = new System.Drawing.Point(111, 48);
             this.txt_ApiAction.Name = "txt_ApiAction";
-            this.txt_ApiAction.Size = new System.Drawing.Size(218, 20);
+            this.txt_ApiAction.Size = new System.Drawing.Size(343, 20);
             this.txt_ApiAction.TabIndex = 15;
             this.txt_ApiAction.Text = "v1/websocket";
             // 
@@ -923,9 +1029,9 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.tss_subTopic});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 520);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 618);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(595, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(720, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -970,7 +1076,7 @@
             this.saveInputSettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(595, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(720, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -992,13 +1098,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 542);
+            this.ClientSize = new System.Drawing.Size(720, 640);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(611, 581);
+            this.MinimumSize = new System.Drawing.Size(702, 605);
             this.Name = "WebSocketTestClient";
             this.Text = "WebSocket & Nats Client";
             this.Load += new System.EventHandler(this.WebSocketClient_Load);
@@ -1010,11 +1116,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_login_port)).EndInit();
             this.tab_send.ResumeLayout(false);
             this.tab_send.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.tab_nats.ResumeLayout(false);
             this.tab_nats.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.num_NasPort)).EndInit();
             this.tabApi.ResumeLayout(false);
             this.tabApi.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.num_ApiPort)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1106,6 +1230,11 @@
         private System.Windows.Forms.ComboBox cmb_HttpMethod;
         private System.Windows.Forms.CheckBox chk_natTls;
         private System.Windows.Forms.ComboBox cmb_wss;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Button btn_SaveLog;
+        private System.Windows.Forms.Button btn_saveApiLog;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -26,6 +27,10 @@ namespace WebSocketClient
         private LoginResponse _loginResponse;
         private IConnection conn;
         private IAsyncSubscription sAsync = null;
+        private FileStream _webSocketLogFileStream;
+        private string _webSocketLogFilePath;
+        private FileStream _webApiLogFileStream;
+        private string _webApiLogFilePath;
 
         public WebSocketTestClient()
         {
@@ -77,11 +82,11 @@ namespace WebSocketClient
                 _webSocketClient.OnOpen += _webSocketClient_OnOpen;
                 _webSocketClient.OnMessage += (sender, e) =>
                 {
-                    txt_Received.AppendText(string.Format("-----{0}-----",DateTime.Now));
-                    txt_Received.AppendText("\r\n");
+                    txt_Received.AppendText($"------{DateTime.Now}-----");
+                    //txt_Received.AppendText("\r\n");
                     txt_Received.AppendText(e.Data);
                     txt_Received.AppendText("\r\n");
-                    txt_Received.AppendText("\r\n");
+                    //txt_Received.AppendText("\r\n");
                 };
                 _webSocketClient.WaitTime = TimeSpan.FromSeconds(8);
 
@@ -137,7 +142,7 @@ namespace WebSocketClient
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             txt_Received.Clear();
-            txt_Send.Clear();
+            //txt_Send.Clear();
         }
 
         private void btn_Send_Click(object sender, EventArgs e)
@@ -229,6 +234,35 @@ namespace WebSocketClient
                 txt_ApiHost.Text = txt_login_Host.Text;
                 num_ApiPort.Value = num_login_port.Value;
 
+                //创建web socket Log 文件
+                string currentExecutePath = System.Environment.CurrentDirectory;
+                if (!Directory.Exists(currentExecutePath + "\\" + "log"))
+                {
+                    Directory.CreateDirectory(currentExecutePath + "\\" + "log");
+                }
+
+                string webSocketLogfileName = System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss");
+                _webSocketLogFilePath = string.Format($"{currentExecutePath}\\log\\webSocket_{webSocketLogfileName}.log");
+
+                if (_webSocketLogFileStream!=null &&!_webSocketLogFileStream.Name.Equals(_webSocketLogFilePath))
+                {
+                    _webSocketLogFileStream.Close();
+                }
+
+                _webSocketLogFileStream = File.Create(_webSocketLogFilePath);
+                _webSocketLogFileStream.Close();
+
+                //创建web api Log 文件
+                string webApiLogFileName = System.DateTime.Now.ToString("webApi_yyyy_MM_dd_HH_mm_ss");
+                _webApiLogFilePath = string.Format($"{currentExecutePath}\\log\\{webApiLogFileName}.log");
+
+                if (_webApiLogFileStream != null && !_webApiLogFileStream.Name.Equals(_webApiLogFilePath))
+                {
+                    _webApiLogFileStream.Close();
+                }
+
+                _webApiLogFileStream = File.Create(_webApiLogFilePath);
+                _webApiLogFileStream.Close();
             }
             else
             {
@@ -450,9 +484,9 @@ namespace WebSocketClient
             sAsync.MessageHandler += (nat_Sender, nat_e) =>
             {
                 txt_Nas_received.AppendText(string.Format("-----Received at:{0}-----", DateTime.Now));
-                txt_Nas_received.AppendText("\r\n");
+                //txt_Nas_received.AppendText("\r\n");
                 txt_Nas_received.AppendText(System.Text.Encoding.Default.GetString(nat_e.Message.Data));
-                txt_Nas_received.AppendText("\r\n");
+                //txt_Nas_received.AppendText("\r\n");
                 txt_Nas_received.AppendText("\r\n");
             };
             sAsync.Start();
@@ -527,8 +561,82 @@ namespace WebSocketClient
             }
         }
 
-
         
+
+        private void btn_SaveLog_Click(object sender, EventArgs e)
+        {
+           _webSocketLogFileStream = File.OpenWrite(_webSocketLogFilePath);
+           _webSocketLogFileStream.Position = _webSocketLogFileStream.Length;
+
+           Dictionary<string, object> deserializeObject = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<String, Object>>(txt_Send.Text);
+           string msgType = string.Empty;
+           if (deserializeObject.TryGetValue("msgType", out Object msgTypeValue))
+           {
+               msgType = msgTypeValue.ToString();
+           }
+            //写入文件
+            Encoding encoder = Encoding.UTF8;
+
+            byte[] spliteBytes = encoder.GetBytes($"====================================================================\r\n");
+            _webSocketLogFileStream.Write(spliteBytes, 0, spliteBytes.Length);
+
+            byte[] requestHeader = encoder.GetBytes($"------{DateTime.Now}------Web Socket Rrequest: {msgType}\r\n");
+            byte[] requestBody    = encoder.GetBytes($"{txt_Send.Text}\r\n");
+
+            _webSocketLogFileStream.Write(requestHeader, 0, requestHeader.Length);
+            _webSocketLogFileStream.Write(requestBody, 0, requestBody.Length);
+
+            byte[] spliteResponseBytes = encoder.GetBytes($"-------------------------------------------------\r\n");
+            _webSocketLogFileStream.Write(spliteResponseBytes, 0, spliteResponseBytes.Length);
+
+            byte[] responseHeader = encoder.GetBytes($"------{DateTime.Now}------Web Socket response: {msgType}\r\n");
+            byte[] responseBody = encoder.GetBytes($"{txt_Received.Text}\r\n");
+
+            _webSocketLogFileStream.Write(responseHeader, 0, responseHeader.Length);
+            _webSocketLogFileStream.Write(responseBody, 0, responseBody.Length);
+
+            _webSocketLogFileStream.Write(spliteResponseBytes, 0, spliteResponseBytes.Length);
+
+            byte[] toNatsHeader = encoder.GetBytes($"------{DateTime.Now}------Web Socket to Nas Request: {msgType}\r\n");
+            byte[] toNasBody = encoder.GetBytes($"{txt_Nas_received.Text}\r\n");
+
+            _webSocketLogFileStream.Write(toNatsHeader, 0, toNatsHeader.Length);
+            _webSocketLogFileStream.Write(toNasBody, 0, toNasBody.Length);
+
+            _webSocketLogFileStream.Close();
+        }
+
+        private void btn_saveApiLog_Click(object sender, EventArgs e)
+        {
+            _webApiLogFileStream = File.OpenWrite(_webApiLogFilePath);
+            _webApiLogFileStream.Position = _webApiLogFileStream.Length;
+
+            
+            string msgType = txt_ApiAction.Text;
+             
+            //写入文件
+            Encoding encoder = Encoding.UTF8;
+
+            byte[] spliteBytes = encoder.GetBytes($"====================================================================\r\n");
+            _webApiLogFileStream.Write(spliteBytes,0,spliteBytes.Length);
+
+            byte[] requestHeader = encoder.GetBytes($"------{DateTime.Now}------Web Api Rrequest: {msgType}\r\n");
+            byte[] requestBody = encoder.GetBytes($"{txt_ApiSend.Text}\r\n");
+
+            _webApiLogFileStream.Write(requestHeader, 0, requestHeader.Length);
+            _webApiLogFileStream.Write(requestBody, 0, requestBody.Length);
+
+            byte[] spliteResponseBytes = encoder.GetBytes($"-------------------------------------------------\r\n");
+            _webApiLogFileStream.Write(spliteResponseBytes,0,spliteResponseBytes.Length);
+
+            byte[] responseHeader = encoder.GetBytes($"------{DateTime.Now}------Web Api response: {msgType}\r\n");
+            byte[] responseBody = encoder.GetBytes($"{txt_ApiReceive.Text}\r\n");
+
+            _webApiLogFileStream.Write(responseHeader, 0, responseHeader.Length);
+            _webApiLogFileStream.Write(responseBody, 0, responseBody.Length);
+
+            _webApiLogFileStream.Close();
+        }
     }
 
 }
