@@ -660,7 +660,7 @@ namespace WebSocketClient
             var connectOption = 
             new MqttClientOptionsBuilder()
             .WithTcpServer(mqttServerAddress, mqttPort)
-            .WithClientId("Client_Tool")
+            .WithClientId("Client_Tool_"+ Guid.NewGuid().ToString())
             .WithKeepAlivePeriod(TimeSpan.FromHours(24))
             .WithCleanSession(false)
             .Build();
