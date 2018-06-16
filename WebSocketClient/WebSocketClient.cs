@@ -18,6 +18,10 @@ using WebSocketSharp;
 using NATS.Client;
 using WebSocketSharp.Net;
 using Cookie = System.Net.Cookie;
+using MQTTnet;
+using MQTTnet.Client;
+using MQTTnet.Exceptions;
+using MQTTnet.Protocol;
 
 namespace WebSocketClient
 {
@@ -31,6 +35,7 @@ namespace WebSocketClient
         private string _webSocketLogFilePath;
         private FileStream _webApiLogFileStream;
         private string _webApiLogFilePath;
+        private IMqttClient mqttClient;
 
         public WebSocketTestClient()
         {
@@ -636,6 +641,103 @@ namespace WebSocketClient
             _webApiLogFileStream.Write(responseBody, 0, responseBody.Length);
 
             _webApiLogFileStream.Close();
+        }
+
+        private void btnMqttConnect_Click(object sender, EventArgs e)
+        {
+            var factory = new MqttFactory();
+            mqttClient = factory.CreateMqttClient();
+
+            mqttClient.Connected += MqttClient_Connected;
+            mqttClient.ApplicationMessageReceived += MqttClient_ApplicationMessageReceived;
+            mqttClient.Disconnected += MqttClient_Disconnected;
+
+
+
+            string mqttServerAddress = txt_mqttService.Text;
+            int mqttPort = int.Parse(num_mqttPort.Value.ToString());
+
+            var connectOption = 
+            new MqttClientOptionsBuilder()
+            .WithTcpServer(mqttServerAddress, mqttPort)
+            .WithClientId("Client_Tool")
+            .WithKeepAlivePeriod(TimeSpan.FromHours(24))
+            .WithCleanSession(false)
+            .Build();
+
+            var connectTask = mqttClient.ConnectAsync(connectOption);
+            connectTask.ContinueWith(t => {
+                this.btn_mqttConnect.Enabled = false;
+                this.btn_DisconnectMqtt.Enabled = true;
+                this.btn_MqttPub.Enabled = true;
+                this.btn_MqttSub.Enabled = true;
+            });
+
+
+        }
+
+        private void MqttClient_Disconnected(object sender, MqttClientDisconnectedEventArgs e)
+        {
+            MessageBox.Show("Disconnect");
+        }
+
+        private void MqttClient_ApplicationMessageReceived(object sender, MqttApplicationMessageReceivedEventArgs e)
+        {
+            txt_mqttReceiveContent.Text = e.ApplicationMessage.ConvertPayloadToString();
+        }
+
+        private void MqttClient_Connected(object sender, MqttClientConnectedEventArgs e)
+        {
+            MessageBox.Show("Connected");
+        }
+
+        private void btn_DisconnectMqtt_Click(object sender, EventArgs e)
+        {
+            if (mqttClient != null)
+            {
+                if (mqttClient.IsConnected)
+                {
+                    mqttClient.DisconnectAsync().ContinueWith(t => {
+                        this.btn_mqttConnect.Enabled = true;
+                        this.btn_MqttPub.Enabled = false;
+                        this.btn_MqttSub.Enabled = false;
+                        this.btn_DisconnectMqtt.Enabled = false;
+                    });
+                }
+                else
+                {
+                    this.btn_mqttConnect.Enabled = true;
+                    this.btn_MqttPub.Enabled = false;
+                    this.btn_MqttSub.Enabled = false;
+                    this.btn_DisconnectMqtt.Enabled = false;
+                }
+                lbl_SubTopic.Text = string.Empty;
+            }
+        }
+
+        private void btnMqttSub_Click(object sender, EventArgs e)
+        {
+            if (mqttClient != null && mqttClient.IsConnected)
+            {
+                mqttClient.SubscribeAsync(txt_mqttTopic.Text,MQTTnet.Protocol.MqttQualityOfServiceLevel.AtLeastOnce)
+                .ContinueWith(task=> {
+                    string topic = task.Result.First().TopicFilter.Topic;
+                    lbl_SubTopic.Text = topic;
+
+                    this.btn_MqttPub.Enabled = true;
+                });
+            }
+        }
+
+        private void btn_MqttPub_Click(object sender, EventArgs e)
+        {
+            if (mqttClient != null)
+            {
+                var appMsg = new MqttApplicationMessage(txt_mqttTopic.Text, Encoding.UTF8.GetBytes(txt_mqttSentContent.Text), MqttQualityOfServiceLevel.AtMostOnce, false);
+                mqttClient.PublishAsync(appMsg).ContinueWith(t=> {
+                    
+                });
+            }
         }
     }
 
