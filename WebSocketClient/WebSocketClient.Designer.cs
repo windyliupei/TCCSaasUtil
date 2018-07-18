@@ -214,6 +214,7 @@
             this.txt_Send.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Send.Size = new System.Drawing.Size(666, 130);
             this.txt_Send.TabIndex = 0;
+            this.txt_Send.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txt_Received
             // 
@@ -226,6 +227,7 @@
             this.txt_Received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Received.Size = new System.Drawing.Size(666, 160);
             this.txt_Received.TabIndex = 3;
+            this.txt_Received.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label2
             // 
@@ -345,7 +347,7 @@
             this.tab_login.Controls.Add(this.label6);
             this.tab_login.Location = new System.Drawing.Point(4, 22);
             this.tab_login.Name = "tab_login";
-            this.tab_login.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_login.Padding = new System.Windows.Forms.Padding(3);
             this.tab_login.Size = new System.Drawing.Size(712, 569);
             this.tab_login.TabIndex = 0;
             this.tab_login.Text = "Login";
@@ -598,7 +600,7 @@
             this.tab_send.Controls.Add(this.btn_Disconect);
             this.tab_send.Location = new System.Drawing.Point(4, 22);
             this.tab_send.Name = "tab_send";
-            this.tab_send.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_send.Padding = new System.Windows.Forms.Padding(3);
             this.tab_send.Size = new System.Drawing.Size(712, 569);
             this.tab_send.TabIndex = 1;
             this.tab_send.Text = "Web Socket Send";
@@ -723,6 +725,7 @@
             this.txt_Nas_SendContext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Nas_SendContext.Size = new System.Drawing.Size(630, 167);
             this.txt_Nas_SendContext.TabIndex = 17;
+            this.txt_Nas_SendContext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label15
             // 
@@ -753,6 +756,7 @@
             this.txt_Nas_received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_Nas_received.Size = new System.Drawing.Size(630, 167);
             this.txt_Nas_received.TabIndex = 21;
+            this.txt_Nas_received.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // chk_natTls
             // 
@@ -886,7 +890,7 @@
             this.tabApi.Controls.Add(this.num_ApiPort);
             this.tabApi.Location = new System.Drawing.Point(4, 22);
             this.tabApi.Name = "tabApi";
-            this.tabApi.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabApi.Padding = new System.Windows.Forms.Padding(3);
             this.tabApi.Size = new System.Drawing.Size(712, 569);
             this.tabApi.TabIndex = 3;
             this.tabApi.Text = "WebApi";
@@ -936,6 +940,7 @@
             this.txt_ApiSend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_ApiSend.Size = new System.Drawing.Size(671, 160);
             this.txt_ApiSend.TabIndex = 22;
+            this.txt_ApiSend.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label24
             // 
@@ -966,6 +971,7 @@
             this.txt_ApiReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_ApiReceive.Size = new System.Drawing.Size(670, 158);
             this.txt_ApiReceive.TabIndex = 23;
+            this.txt_ApiReceive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // cmb_HttpMethod
             // 
@@ -1062,7 +1068,7 @@
             this.tabmqtt.Controls.Add(this.txt_mqttService);
             this.tabmqtt.Controls.Add(this.label26);
             this.tabmqtt.Location = new System.Drawing.Point(4, 22);
-            this.tabmqtt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabmqtt.Margin = new System.Windows.Forms.Padding(2);
             this.tabmqtt.Name = "tabmqtt";
             this.tabmqtt.Size = new System.Drawing.Size(712, 569);
             this.tabmqtt.TabIndex = 4;
@@ -1124,6 +1130,7 @@
             this.txt_mqttSentContent.Size = new System.Drawing.Size(654, 162);
             this.txt_mqttSentContent.TabIndex = 17;
             this.txt_mqttSentContent.Text = "{\"Key\":\"value\"}";
+            this.txt_mqttSentContent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label28
             // 
@@ -1154,6 +1161,7 @@
             this.txt_mqttReceiveContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_mqttReceiveContent.Size = new System.Drawing.Size(654, 165);
             this.txt_mqttReceiveContent.TabIndex = 21;
+            this.txt_mqttReceiveContent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txt_mqttTopic
             // 
