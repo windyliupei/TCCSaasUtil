@@ -315,6 +315,27 @@ namespace WebSocketClient
                 (obj, cert, chain, sslPolicyErrors) => true;
             ServicePointManager.SecurityProtocol = 
                 SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
+            //
+            this.txt_Send.MaxLength             = Int32.MaxValue;
+            this.txt_Received.MaxLength         = Int32.MaxValue;
+            this.txt_Nas_SendContext.MaxLength  = Int32.MaxValue;
+            this.txt_Nas_received.MaxLength     = Int32.MaxValue;
+            this.txt_ApiSend.MaxLength          = Int32.MaxValue;
+            this.txt_ApiReceive.MaxLength       = Int32.MaxValue;
+            this.txt_mqttSentContent.MaxLength  = Int32.MaxValue;
+            this.txt_mqttReceiveContent.MaxLength = Int32.MaxValue;
+
+            this.txt_Send.KeyPress += this.txt_KeyPress;
+            this.txt_Received.KeyPress += this.txt_KeyPress;
+            this.txt_Nas_SendContext.KeyPress += this.txt_KeyPress;
+            this.txt_Nas_received.KeyPress += this.txt_KeyPress;
+            this.txt_ApiSend.KeyPress += this.txt_KeyPress;
+            this.txt_ApiReceive.KeyPress += this.txt_KeyPress;
+            this.txt_mqttSentContent.KeyPress += this.txt_KeyPress;
+            this.txt_mqttReceiveContent.KeyPress += this.txt_KeyPress;
+
+
         }
 
         private void saveInputSettingToolStripMenuItem_Click(object sender, EventArgs e)
