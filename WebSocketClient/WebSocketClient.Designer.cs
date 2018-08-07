@@ -105,6 +105,8 @@
             this.txt_ApiHost = new System.Windows.Forms.TextBox();
             this.num_ApiPort = new System.Windows.Forms.NumericUpDown();
             this.tabmqtt = new System.Windows.Forms.TabPage();
+            this.lbl_SubTopic = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.txt_mqttSentContent = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -129,8 +131,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loadInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lbl_SubTopic = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.num_Port)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tab_login.SuspendLayout();
@@ -214,6 +214,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Send.Location = new System.Drawing.Point(9, 61);
             this.txt_Send.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Send.MaxLength = 2147483647;
             this.txt_Send.Multiline = true;
             this.txt_Send.Name = "txt_Send";
             this.txt_Send.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -227,10 +228,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Received.Location = new System.Drawing.Point(9, 35);
             this.txt_Received.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Received.MaxLength = 2147483647;
             this.txt_Received.Multiline = true;
             this.txt_Received.Name = "txt_Received";
             this.txt_Received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Received.Size = new System.Drawing.Size(1008, 222);
+            this.txt_Received.Size = new System.Drawing.Size(1008, 220);
             this.txt_Received.TabIndex = 3;
             // 
             // label2
@@ -767,6 +769,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nas_SendContext.Location = new System.Drawing.Point(9, 35);
             this.txt_Nas_SendContext.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Nas_SendContext.MaxLength = 2147483647;
             this.txt_Nas_SendContext.Multiline = true;
             this.txt_Nas_SendContext.Name = "txt_Nas_SendContext";
             this.txt_Nas_SendContext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -800,10 +803,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nas_received.Location = new System.Drawing.Point(9, 22);
             this.txt_Nas_received.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Nas_received.MaxLength = 2147483647;
             this.txt_Nas_received.Multiline = true;
             this.txt_Nas_received.Name = "txt_Nas_received";
             this.txt_Nas_received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_received.Size = new System.Drawing.Size(958, 177);
+            this.txt_Nas_received.Size = new System.Drawing.Size(958, 175);
             this.txt_Nas_received.TabIndex = 21;
             // 
             // chk_natTls
@@ -999,6 +1003,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ApiSend.Location = new System.Drawing.Point(9, 33);
             this.txt_ApiSend.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ApiSend.MaxLength = 2147483647;
             this.txt_ApiSend.Multiline = true;
             this.txt_ApiSend.Name = "txt_ApiSend";
             this.txt_ApiSend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -1032,10 +1037,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ApiReceive.Location = new System.Drawing.Point(10, 35);
             this.txt_ApiReceive.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ApiReceive.MaxLength = 2147483647;
             this.txt_ApiReceive.Multiline = true;
             this.txt_ApiReceive.Name = "txt_ApiReceive";
             this.txt_ApiReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_ApiReceive.Size = new System.Drawing.Size(1003, 220);
+            this.txt_ApiReceive.Size = new System.Drawing.Size(1003, 218);
             this.txt_ApiReceive.TabIndex = 23;
             // 
             // cmb_HttpMethod
@@ -1146,6 +1152,25 @@
             this.tabmqtt.Text = "MQTT";
             this.tabmqtt.UseVisualStyleBackColor = true;
             // 
+            // lbl_SubTopic
+            // 
+            this.lbl_SubTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_SubTopic.AutoSize = true;
+            this.lbl_SubTopic.Location = new System.Drawing.Point(112, 760);
+            this.lbl_SubTopic.Name = "lbl_SubTopic";
+            this.lbl_SubTopic.Size = new System.Drawing.Size(0, 18);
+            this.lbl_SubTopic.TabIndex = 38;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(26, 760);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(80, 18);
+            this.label30.TabIndex = 37;
+            this.label30.Text = "Now Sub:";
+            // 
             // splitContainer4
             // 
             this.splitContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1177,6 +1202,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_mqttSentContent.Location = new System.Drawing.Point(9, 35);
             this.txt_mqttSentContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_mqttSentContent.MaxLength = 2147483647;
             this.txt_mqttSentContent.Multiline = true;
             this.txt_mqttSentContent.Name = "txt_mqttSentContent";
             this.txt_mqttSentContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -1211,10 +1237,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_mqttReceiveContent.Location = new System.Drawing.Point(9, 22);
             this.txt_mqttReceiveContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_mqttReceiveContent.MaxLength = 2147483647;
             this.txt_mqttReceiveContent.Multiline = true;
             this.txt_mqttReceiveContent.Name = "txt_mqttReceiveContent";
             this.txt_mqttReceiveContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_mqttReceiveContent.Size = new System.Drawing.Size(958, 175);
+            this.txt_mqttReceiveContent.Size = new System.Drawing.Size(958, 173);
             this.txt_mqttReceiveContent.TabIndex = 21;
             // 
             // txt_mqttTopic
@@ -1412,25 +1439,6 @@
             this.saveInputSettingToolStripMenuItem.Size = new System.Drawing.Size(179, 28);
             this.saveInputSettingToolStripMenuItem.Text = "Save Input Setting";
             this.saveInputSettingToolStripMenuItem.Click += new System.EventHandler(this.saveInputSettingToolStripMenuItem_Click);
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(26, 760);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(80, 18);
-            this.label30.TabIndex = 37;
-            this.label30.Text = "Now Sub:";
-            // 
-            // lbl_SubTopic
-            // 
-            this.lbl_SubTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_SubTopic.AutoSize = true;
-            this.lbl_SubTopic.Location = new System.Drawing.Point(112, 760);
-            this.lbl_SubTopic.Name = "lbl_SubTopic";
-            this.lbl_SubTopic.Size = new System.Drawing.Size(0, 18);
-            this.lbl_SubTopic.TabIndex = 38;
             // 
             // WebSocketTestClient
             // 
