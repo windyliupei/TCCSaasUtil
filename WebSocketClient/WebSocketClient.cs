@@ -36,6 +36,7 @@ namespace WebSocketClient
         private FileStream _webApiLogFileStream;
         private string _webApiLogFilePath;
         private IMqttClient mqttClient;
+        private char ctrl_a = '\u0001';
 
         public WebSocketTestClient()
         {
@@ -737,6 +738,15 @@ namespace WebSocketClient
                 mqttClient.PublishAsync(appMsg).ContinueWith(t=> {
                     
                 });
+            }
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ctrl_a
+                && sender is TextBox) {
+                TextBox textBox = sender as TextBox;
+                textBox.SelectAll();
             }
         }
     }
