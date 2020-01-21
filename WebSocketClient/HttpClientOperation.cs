@@ -14,6 +14,7 @@ namespace WebSocketClient
 {
     public class HttpClientOperation
     {
+        X509Certificate2 x509Certificate2 = null;
         public HttpResponseMessage SendRequestAsync(HttpMethod method, string uri, HttpContent body,
             CancellationToken cancellationToken,
             string contentType = "application/json", Dictionary<string, string> hearders = null, List<Cookie> cookies = null)
@@ -101,5 +102,49 @@ namespace WebSocketClient
         {
             return true;
         }
+
+        #region Remote certification validate 
+        public bool RemoteCertificateValidate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        {
+            if (null != x509Certificate2)
+            {
+                /*
+                 * 根证书未安装到“受信任的根证书颁发机构”时，默认是无法形成可信证书链的。（chain中将只有服务器证书本身）
+                 * 需更改链策略，然后重新构建证书链。
+                */
+                // 将我们的根证书放到链引擎可搜索到的地方
+                chain.ChainPolicy.ExtraStore.Add(x509Certificate2);
+                //不执行吊销检查
+                chain.ChainPolicy.RevocationMode = X509RevocationMode.NoCheck;
+                //忽略CA未知情况、不做时间检查
+                chain.ChainPolicy.VerificationFlags = X509VerificationFlags.AllowUnknownCertificateAuthority | X509VerificationFlags.IgnoreNotTimeNested | X509VerificationFlags.IgnoreNotTimeValid;
+                //重新构建可信证书链
+                bool isOk = chain.Build(certificate as X509Certificate2);
+                if (isOk)
+                {
+                    //获取最前面的证书，认为是根证书
+                    X509Certificate2 cacert = chain.ChainElements[chain.ChainElements.Count - 1].Certificate;
+                    bool check = x509Certificate2.GetPublicKeyString().Equals(cacert.GetPublicKeyString()) && x509Certificate2.Thumbprint.Equals(cacert.Thumbprint);
+
+                    HttpWebRequest req = sender as HttpWebRequest;
+
+                    bool isOkForQaSt = certificate.Subject.Contains("CN=" + "*" + req.Address.Host.Substring(req.Address.Host.IndexOf(".")));
+                    bool isOkForProduct = certificate.Subject.Contains("CN=" + req.Address.Host);
+
+                    if (null != req && (isOkForQaSt || isOkForProduct))
+                    {
+                        //根证书可信且服务器证书确实是指定服务器的，验证通过
+                        return true;
+                    }
+
+                }
+            }
+            return false;
+        }
+        #endregion
+
+
+
+
     }
 }
