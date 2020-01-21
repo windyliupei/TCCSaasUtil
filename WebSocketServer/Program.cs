@@ -11,6 +11,7 @@ namespace WebSocketServerDemo
 {
     class Program
     {
+        [Obsolete]
         static void Main(string[] args)
         {
             var port = int.Parse(System.Configuration.ConfigurationSettings.AppSettings["Port"]);

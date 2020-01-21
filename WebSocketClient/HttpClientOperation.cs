@@ -90,6 +90,7 @@ namespace WebSocketClient
                     catch (Exception ex)
                     {
                         response.StatusCode = HttpStatusCode.InternalServerError;
+                        response.ReasonPhrase = ex.Message;
                     }
                 }
                 return response;

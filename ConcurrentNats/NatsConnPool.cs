@@ -17,6 +17,7 @@ namespace ConcurrentNats
         private static NatsConnPool _instance;
         private static int _maxConn;
 
+        [Obsolete]
         public static NatsConnPool Instance
         {
             get
@@ -31,13 +32,14 @@ namespace ConcurrentNats
 
         public int MaxConnections { get; private set; }
 
+        [Obsolete]
         private NatsConnPool()
         {
             _maxConn = int.Parse(System.Configuration.ConfigurationSettings.AppSettings["maxClientConnCount"]);
             _slim = new SemaphoreSlim(1, _maxConn);//
         }
 
-
+        [Obsolete]
         private void InitPool()
         {
             _stack = new ConcurrentStack<IConnection>();
@@ -49,6 +51,7 @@ namespace ConcurrentNats
             }
         }
 
+        [Obsolete]
         private static IConnection CreateConnection()
         {
             Options opts = ConnectionFactory.GetDefaultOptions();
@@ -69,6 +72,7 @@ namespace ConcurrentNats
             return conn;
         }
 
+        [Obsolete]
         public IConnection Pop()
         {
             _slim.Wait();

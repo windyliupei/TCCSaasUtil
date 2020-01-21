@@ -18,6 +18,7 @@ namespace ConcurrentNats
             InitializeComponent();
         }
 
+        [Obsolete]
         private void btn_run_Click(object sender, EventArgs e)
         {
             //TODO: Load from AppSetting.config, get the max

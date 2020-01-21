@@ -751,6 +751,7 @@ namespace WebSocketClient
             }
         }
 
+        [Obsolete]
         private void btn_MqttPub_Click(object sender, EventArgs e)
         {
             if (mqttClient != null)
