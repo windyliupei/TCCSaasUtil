@@ -36,9 +36,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 64);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(83, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Setting Name:";
             // 
@@ -52,16 +52,16 @@
             this.cmb_Settings.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmb_Settings.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cmb_Settings.FormattingEnabled = true;
-            this.cmb_Settings.Location = new System.Drawing.Point(101, 64);
+            this.cmb_Settings.Location = new System.Drawing.Point(41, 61);
             this.cmb_Settings.Name = "cmb_Settings";
-            this.cmb_Settings.Size = new System.Drawing.Size(194, 21);
+            this.cmb_Settings.Size = new System.Drawing.Size(237, 20);
             this.cmb_Settings.TabIndex = 1;
             // 
             // btn_load
             // 
-            this.btn_load.Location = new System.Drawing.Point(321, 64);
+            this.btn_load.Location = new System.Drawing.Point(41, 101);
             this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(75, 23);
+            this.btn_load.Size = new System.Drawing.Size(75, 21);
             this.btn_load.TabIndex = 2;
             this.btn_load.Text = "Load";
             this.btn_load.UseVisualStyleBackColor = true;
@@ -69,15 +69,18 @@
             // 
             // LoadSettingsWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 141);
+            this.ClientSize = new System.Drawing.Size(334, 156);
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.cmb_Settings);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoadSettingsWindow";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LoadSettingsWindow";
             this.Load += new System.EventHandler(this.LoadSettingsWindow_Load);
             this.ResumeLayout(false);
