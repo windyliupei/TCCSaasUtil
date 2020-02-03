@@ -131,6 +131,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loadInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_loadJSON = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.num_Port)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tab_login.SuspendLayout();
@@ -205,8 +206,8 @@
             // 
             // txt_Send
             // 
-            this.txt_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Send.Location = new System.Drawing.Point(6, 44);
             this.txt_Send.Multiline = true;
@@ -217,8 +218,8 @@
             // 
             // txt_Received
             // 
-            this.txt_Received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Received.Location = new System.Drawing.Point(6, 25);
             this.txt_Received.Multiline = true;
@@ -295,7 +296,7 @@
             // 
             // txt_Cmd
             // 
-            this.txt_Cmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Cmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Cmd.Location = new System.Drawing.Point(141, 65);
             this.txt_Cmd.Name = "txt_Cmd";
@@ -304,8 +305,8 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_login);
             this.tabControl1.Controls.Add(this.tab_send);
@@ -345,7 +346,7 @@
             this.tab_login.Controls.Add(this.label6);
             this.tab_login.Location = new System.Drawing.Point(4, 22);
             this.tab_login.Name = "tab_login";
-            this.tab_login.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_login.Padding = new System.Windows.Forms.Padding(3);
             this.tab_login.Size = new System.Drawing.Size(712, 569);
             this.tab_login.TabIndex = 0;
             this.tab_login.Text = "Login";
@@ -421,7 +422,7 @@
             // 
             // txt_phoneUUID
             // 
-            this.txt_phoneUUID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_phoneUUID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_phoneUUID.Location = new System.Drawing.Point(85, 350);
             this.txt_phoneUUID.Name = "txt_phoneUUID";
@@ -431,7 +432,7 @@
             // 
             // txt_Application
             // 
-            this.txt_Application.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Application.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Application.Location = new System.Drawing.Point(85, 299);
             this.txt_Application.Name = "txt_Application";
@@ -535,7 +536,7 @@
             // 
             // txt_login_ReqUrl
             // 
-            this.txt_login_ReqUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_login_ReqUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_login_ReqUrl.Location = new System.Drawing.Point(85, 151);
             this.txt_login_ReqUrl.Name = "txt_login_ReqUrl";
@@ -563,7 +564,7 @@
             // 
             // txt_login_Host
             // 
-            this.txt_login_Host.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_login_Host.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_login_Host.Location = new System.Drawing.Point(85, 78);
             this.txt_login_Host.Name = "txt_login_Host";
@@ -582,6 +583,7 @@
             // 
             // tab_send
             // 
+            this.tab_send.Controls.Add(this.btn_loadJSON);
             this.tab_send.Controls.Add(this.btn_SaveLog);
             this.tab_send.Controls.Add(this.splitContainer3);
             this.tab_send.Controls.Add(this.cmb_wss);
@@ -598,7 +600,7 @@
             this.tab_send.Controls.Add(this.btn_Disconect);
             this.tab_send.Location = new System.Drawing.Point(4, 22);
             this.tab_send.Name = "tab_send";
-            this.tab_send.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_send.Padding = new System.Windows.Forms.Padding(3);
             this.tab_send.Size = new System.Drawing.Size(712, 569);
             this.tab_send.TabIndex = 1;
             this.tab_send.Text = "Web Socket Send";
@@ -607,7 +609,7 @@
             // btn_SaveLog
             // 
             this.btn_SaveLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveLog.Location = new System.Drawing.Point(583, 134);
+            this.btn_SaveLog.Location = new System.Drawing.Point(502, 133);
             this.btn_SaveLog.Name = "btn_SaveLog";
             this.btn_SaveLog.Size = new System.Drawing.Size(75, 23);
             this.btn_SaveLog.TabIndex = 15;
@@ -617,8 +619,8 @@
             // 
             // splitContainer3
             // 
-            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer3.Location = new System.Drawing.Point(8, 163);
             this.splitContainer3.Name = "splitContainer3";
@@ -692,8 +694,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(11, 144);
             this.splitContainer1.Name = "splitContainer1";
@@ -714,8 +716,8 @@
             // 
             // txt_Nas_SendContext
             // 
-            this.txt_Nas_SendContext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Nas_SendContext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nas_SendContext.Location = new System.Drawing.Point(6, 25);
             this.txt_Nas_SendContext.Multiline = true;
@@ -744,8 +746,8 @@
             // 
             // txt_Nas_received
             // 
-            this.txt_Nas_received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Nas_received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nas_received.Location = new System.Drawing.Point(6, 16);
             this.txt_Nas_received.Multiline = true;
@@ -830,7 +832,7 @@
             // 
             // txt_Nas_Topic
             // 
-            this.txt_Nas_Topic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Nas_Topic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nas_Topic.Location = new System.Drawing.Point(85, 99);
             this.txt_Nas_Topic.Name = "txt_Nas_Topic";
@@ -886,7 +888,7 @@
             this.tabApi.Controls.Add(this.num_ApiPort);
             this.tabApi.Location = new System.Drawing.Point(4, 22);
             this.tabApi.Name = "tabApi";
-            this.tabApi.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabApi.Padding = new System.Windows.Forms.Padding(3);
             this.tabApi.Size = new System.Drawing.Size(712, 569);
             this.tabApi.TabIndex = 3;
             this.tabApi.Text = "WebApi";
@@ -905,8 +907,8 @@
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.Location = new System.Drawing.Point(8, 124);
             this.splitContainer2.Name = "splitContainer2";
@@ -927,8 +929,8 @@
             // 
             // txt_ApiSend
             // 
-            this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ApiSend.Location = new System.Drawing.Point(6, 24);
             this.txt_ApiSend.Multiline = true;
@@ -957,8 +959,8 @@
             // 
             // txt_ApiReceive
             // 
-            this.txt_ApiReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_ApiReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ApiReceive.Location = new System.Drawing.Point(7, 25);
             this.txt_ApiReceive.Multiline = true;
@@ -1013,7 +1015,7 @@
             // 
             // txt_ApiAction
             // 
-            this.txt_ApiAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_ApiAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ApiAction.Location = new System.Drawing.Point(111, 48);
             this.txt_ApiAction.Name = "txt_ApiAction";
@@ -1062,7 +1064,7 @@
             this.tabmqtt.Controls.Add(this.txt_mqttService);
             this.tabmqtt.Controls.Add(this.label26);
             this.tabmqtt.Location = new System.Drawing.Point(4, 22);
-            this.tabmqtt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabmqtt.Margin = new System.Windows.Forms.Padding(2);
             this.tabmqtt.Name = "tabmqtt";
             this.tabmqtt.Size = new System.Drawing.Size(712, 569);
             this.tabmqtt.TabIndex = 4;
@@ -1092,8 +1094,8 @@
             // 
             // splitContainer4
             // 
-            this.splitContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer4.Location = new System.Drawing.Point(15, 151);
             this.splitContainer4.Name = "splitContainer4";
@@ -1114,8 +1116,8 @@
             // 
             // txt_mqttSentContent
             // 
-            this.txt_mqttSentContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_mqttSentContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_mqttSentContent.Location = new System.Drawing.Point(6, 25);
             this.txt_mqttSentContent.Multiline = true;
@@ -1145,8 +1147,8 @@
             // 
             // txt_mqttReceiveContent
             // 
-            this.txt_mqttReceiveContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_mqttReceiveContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_mqttReceiveContent.Location = new System.Drawing.Point(6, 16);
             this.txt_mqttReceiveContent.Multiline = true;
@@ -1157,7 +1159,7 @@
             // 
             // txt_mqttTopic
             // 
-            this.txt_mqttTopic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_mqttTopic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_mqttTopic.Location = new System.Drawing.Point(91, 105);
             this.txt_mqttTopic.Name = "txt_mqttTopic";
@@ -1282,7 +1284,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(97, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(90, 17);
             this.toolStripStatusLabel1.Text = "Connect Status:";
             // 
             // toolStripSplitButton1
@@ -1297,20 +1299,20 @@
             // 
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(63, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(57, 17);
             this.toolStripStatusLabel2.Text = "Not login";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(79, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(72, 17);
             this.toolStripStatusLabel3.Text = "Current sub:";
             // 
             // tss_subTopic
             // 
             this.tss_subTopic.ForeColor = System.Drawing.Color.Red;
             this.tss_subTopic.Name = "tss_subTopic";
-            this.tss_subTopic.Size = new System.Drawing.Size(113, 17);
+            this.tss_subTopic.Size = new System.Drawing.Size(102, 17);
             this.tss_subTopic.Text = "Not Sub any topic";
             // 
             // menuStrip1
@@ -1321,23 +1323,33 @@
             this.saveInputSettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(720, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(720, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // loadInputSettingToolStripMenuItem
             // 
             this.loadInputSettingToolStripMenuItem.Name = "loadInputSettingToolStripMenuItem";
-            this.loadInputSettingToolStripMenuItem.Size = new System.Drawing.Size(127, 21);
+            this.loadInputSettingToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.loadInputSettingToolStripMenuItem.Text = "Load Input Setting";
             this.loadInputSettingToolStripMenuItem.Click += new System.EventHandler(this.loadInputSettingToolStripMenuItem_Click);
             // 
             // saveInputSettingToolStripMenuItem
             // 
             this.saveInputSettingToolStripMenuItem.Name = "saveInputSettingToolStripMenuItem";
-            this.saveInputSettingToolStripMenuItem.Size = new System.Drawing.Size(125, 21);
+            this.saveInputSettingToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.saveInputSettingToolStripMenuItem.Text = "Save Input Setting";
             this.saveInputSettingToolStripMenuItem.Click += new System.EventHandler(this.saveInputSettingToolStripMenuItem_Click);
+            // 
+            // btn_loadJSON
+            // 
+            this.btn_loadJSON.Location = new System.Drawing.Point(583, 133);
+            this.btn_loadJSON.Name = "btn_loadJSON";
+            this.btn_loadJSON.Size = new System.Drawing.Size(75, 23);
+            this.btn_loadJSON.TabIndex = 16;
+            this.btn_loadJSON.Text = "Load JSON";
+            this.btn_loadJSON.UseVisualStyleBackColor = true;
+            this.btn_loadJSON.Click += new System.EventHandler(this.btn_loadJSON_Click);
             // 
             // WebSocketTestClient
             // 
@@ -1507,6 +1519,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lbl_SubTopic;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button btn_loadJSON;
     }
 }
 
