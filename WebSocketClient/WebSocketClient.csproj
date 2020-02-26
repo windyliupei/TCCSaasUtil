@@ -69,6 +69,7 @@
     <Compile Include="HttpClientOperation.cs" />
     <Compile Include="HttpClientOperationAsync.cs" />
     <Compile Include="InputSetting.cs" />
+    <Compile Include="LoadJson.cs" />
     <Compile Include="LoadSettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>

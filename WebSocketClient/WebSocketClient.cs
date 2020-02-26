@@ -772,9 +772,26 @@ namespace WebSocketClient
             }
         }
 
-        private void btn_push_Click(object sender, EventArgs e)
+        private void btn_loadJSON_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            DialogResult dialogResult = openFileDialog.ShowDialog(this);
 
+            if (dialogResult == DialogResult.OK) 
+            {
+                String loadedJson = LoadJsonService.LoadJson(openFileDialog.FileName);
+
+                if (loadedJson == String.Empty) 
+                {
+                    MessageBox.Show("Read Json file failed,Please check file");
+                }
+
+                txt_Send.Clear();
+                txt_Send.Text = loadedJson;
+            }
+
+            
+            
         }
     }
 
