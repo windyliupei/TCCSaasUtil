@@ -771,6 +771,11 @@ namespace WebSocketClient
                 textBox.SelectAll();
             }
         }
+
+        private void btn_push_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

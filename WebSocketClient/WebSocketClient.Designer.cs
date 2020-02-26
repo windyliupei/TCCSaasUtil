@@ -131,6 +131,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loadInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tab_androidPush = new System.Windows.Forms.TabPage();
+            this.lbl_XG_ACCESS_ID = new System.Windows.Forms.Label();
+            this.txt_XG_ACCESS_ID = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txt_XG_ACCESS_KEY = new System.Windows.Forms.TextBox();
+            this.btn_push = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.num_Port)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tab_login.SuspendLayout();
@@ -161,31 +167,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.num_mqttPort)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tab_androidPush.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_wsServer
             // 
-            this.txt_wsServer.Location = new System.Drawing.Point(142, 31);
+            this.txt_wsServer.Location = new System.Drawing.Point(142, 29);
             this.txt_wsServer.Name = "txt_wsServer";
-            this.txt_wsServer.Size = new System.Drawing.Size(330, 20);
+            this.txt_wsServer.Size = new System.Drawing.Size(330, 21);
             this.txt_wsServer.TabIndex = 0;
             this.txt_wsServer.Text = "echo.websocket.org";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 14);
+            this.label1.Location = new System.Drawing.Point(6, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.Size = new System.Drawing.Size(101, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "Server Address：";
             // 
             // btn_Send
             // 
             this.btn_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Send.Location = new System.Drawing.Point(421, 134);
+            this.btn_Send.Location = new System.Drawing.Point(421, 124);
             this.btn_Send.Name = "btn_Send";
-            this.btn_Send.Size = new System.Drawing.Size(75, 23);
+            this.btn_Send.Size = new System.Drawing.Size(75, 21);
             this.btn_Send.TabIndex = 2;
             this.btn_Send.Text = "Send";
             this.btn_Send.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -195,9 +202,9 @@
             // btn_Clear
             // 
             this.btn_Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Clear.Location = new System.Drawing.Point(583, 91);
+            this.btn_Clear.Location = new System.Drawing.Point(583, 84);
             this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_Clear.Size = new System.Drawing.Size(75, 21);
             this.btn_Clear.TabIndex = 2;
             this.btn_Clear.Text = "Clear";
             this.btn_Clear.UseVisualStyleBackColor = true;
@@ -205,52 +212,52 @@
             // 
             // txt_Send
             // 
-            this.txt_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Send.Location = new System.Drawing.Point(6, 44);
+            this.txt_Send.Location = new System.Drawing.Point(6, 41);
             this.txt_Send.Multiline = true;
             this.txt_Send.Name = "txt_Send";
             this.txt_Send.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Send.Size = new System.Drawing.Size(666, 130);
+            this.txt_Send.Size = new System.Drawing.Size(666, 119);
             this.txt_Send.TabIndex = 0;
             // 
             // txt_Received
             // 
-            this.txt_Received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Received.Location = new System.Drawing.Point(6, 25);
+            this.txt_Received.Location = new System.Drawing.Point(6, 23);
             this.txt_Received.Multiline = true;
             this.txt_Received.Name = "txt_Received";
             this.txt_Received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Received.Size = new System.Drawing.Size(666, 160);
+            this.txt_Received.Size = new System.Drawing.Size(666, 148);
             this.txt_Received.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 17);
+            this.label2.Location = new System.Drawing.Point(3, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(83, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "Send Context:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Location = new System.Drawing.Point(3, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 5;
             this.label3.Text = "Received Context:";
             // 
             // btn_Conect
             // 
             this.btn_Conect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Conect.Location = new System.Drawing.Point(421, 91);
+            this.btn_Conect.Location = new System.Drawing.Point(421, 84);
             this.btn_Conect.Name = "btn_Conect";
-            this.btn_Conect.Size = new System.Drawing.Size(75, 23);
+            this.btn_Conect.Size = new System.Drawing.Size(75, 21);
             this.btn_Conect.TabIndex = 2;
             this.btn_Conect.Text = "Connect";
             this.btn_Conect.UseVisualStyleBackColor = true;
@@ -259,9 +266,9 @@
             // btn_Disconect
             // 
             this.btn_Disconect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Disconect.Location = new System.Drawing.Point(502, 91);
+            this.btn_Disconect.Location = new System.Drawing.Point(502, 84);
             this.btn_Disconect.Name = "btn_Disconect";
-            this.btn_Disconect.Size = new System.Drawing.Size(75, 23);
+            this.btn_Disconect.Size = new System.Drawing.Size(75, 21);
             this.btn_Disconect.TabIndex = 2;
             this.btn_Disconect.Text = "Disconect";
             this.btn_Disconect.UseVisualStyleBackColor = true;
@@ -269,14 +276,14 @@
             // 
             // num_Port
             // 
-            this.num_Port.Location = new System.Drawing.Point(510, 30);
+            this.num_Port.Location = new System.Drawing.Point(510, 28);
             this.num_Port.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.num_Port.Name = "num_Port";
-            this.num_Port.Size = new System.Drawing.Size(57, 20);
+            this.num_Port.Size = new System.Drawing.Size(57, 21);
             this.num_Port.TabIndex = 7;
             this.num_Port.Value = new decimal(new int[] {
             80,
@@ -287,35 +294,36 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 68);
+            this.label4.Location = new System.Drawing.Point(10, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.Size = new System.Drawing.Size(113, 12);
             this.label4.TabIndex = 9;
             this.label4.Text = "Command(开头要写/)";
             // 
             // txt_Cmd
             // 
-            this.txt_Cmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Cmd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Cmd.Location = new System.Drawing.Point(141, 65);
+            this.txt_Cmd.Location = new System.Drawing.Point(141, 60);
             this.txt_Cmd.Name = "txt_Cmd";
-            this.txt_Cmd.Size = new System.Drawing.Size(517, 20);
+            this.txt_Cmd.Size = new System.Drawing.Size(517, 21);
             this.txt_Cmd.TabIndex = 10;
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_login);
             this.tabControl1.Controls.Add(this.tab_send);
             this.tabControl1.Controls.Add(this.tab_nats);
             this.tabControl1.Controls.Add(this.tabApi);
             this.tabControl1.Controls.Add(this.tabmqtt);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Controls.Add(this.tab_androidPush);
+            this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(720, 595);
+            this.tabControl1.Size = new System.Drawing.Size(720, 549);
             this.tabControl1.TabIndex = 11;
             // 
             // tab_login
@@ -345,8 +353,8 @@
             this.tab_login.Controls.Add(this.label6);
             this.tab_login.Location = new System.Drawing.Point(4, 22);
             this.tab_login.Name = "tab_login";
-            this.tab_login.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tab_login.Size = new System.Drawing.Size(712, 569);
+            this.tab_login.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_login.Size = new System.Drawing.Size(712, 523);
             this.tab_login.TabIndex = 0;
             this.tab_login.Text = "Login";
             this.tab_login.UseVisualStyleBackColor = true;
@@ -358,26 +366,26 @@
             this.cmb_isAuto.Items.AddRange(new object[] {
             "true",
             "false"});
-            this.cmb_isAuto.Location = new System.Drawing.Point(85, 429);
+            this.cmb_isAuto.Location = new System.Drawing.Point(85, 396);
             this.cmb_isAuto.Name = "cmb_isAuto";
-            this.cmb_isAuto.Size = new System.Drawing.Size(97, 21);
+            this.cmb_isAuto.Size = new System.Drawing.Size(97, 20);
             this.cmb_isAuto.TabIndex = 23;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(8, 432);
+            this.label21.Location = new System.Drawing.Point(8, 399);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 13);
+            this.label21.Size = new System.Drawing.Size(77, 12);
             this.label21.TabIndex = 22;
             this.label21.Text = "IsAutoLogin:";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 398);
+            this.label20.Location = new System.Drawing.Point(8, 367);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 13);
+            this.label20.Size = new System.Drawing.Size(59, 12);
             this.label20.TabIndex = 21;
             this.label20.Text = "Language:";
             // 
@@ -387,76 +395,76 @@
             this.cmb_language.Items.AddRange(new object[] {
             "en_us",
             "zh_cn"});
-            this.cmb_language.Location = new System.Drawing.Point(85, 390);
+            this.cmb_language.Location = new System.Drawing.Point(85, 360);
             this.cmb_language.Name = "cmb_language";
-            this.cmb_language.Size = new System.Drawing.Size(97, 21);
+            this.cmb_language.Size = new System.Drawing.Size(97, 20);
             this.cmb_language.TabIndex = 20;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 49);
+            this.label19.Location = new System.Drawing.Point(8, 45);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 13);
+            this.label19.Size = new System.Drawing.Size(47, 12);
             this.label19.TabIndex = 19;
             this.label19.Text = "Schema:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 306);
+            this.label18.Location = new System.Drawing.Point(6, 282);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 13);
+            this.label18.Size = new System.Drawing.Size(77, 12);
             this.label18.TabIndex = 18;
             this.label18.Text = "Application:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 358);
+            this.label17.Location = new System.Drawing.Point(8, 330);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 13);
+            this.label17.Size = new System.Drawing.Size(71, 12);
             this.label17.TabIndex = 17;
             this.label17.Text = "Phone UUID:";
             // 
             // txt_phoneUUID
             // 
-            this.txt_phoneUUID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_phoneUUID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_phoneUUID.Location = new System.Drawing.Point(85, 350);
+            this.txt_phoneUUID.Location = new System.Drawing.Point(85, 323);
             this.txt_phoneUUID.Name = "txt_phoneUUID";
-            this.txt_phoneUUID.Size = new System.Drawing.Size(607, 20);
+            this.txt_phoneUUID.Size = new System.Drawing.Size(607, 21);
             this.txt_phoneUUID.TabIndex = 16;
             this.txt_phoneUUID.Text = "237b42b-0ce7-4582-830c-34d930b1fd52";
             // 
             // txt_Application
             // 
-            this.txt_Application.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Application.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Application.Location = new System.Drawing.Point(85, 299);
+            this.txt_Application.Location = new System.Drawing.Point(85, 276);
             this.txt_Application.Name = "txt_Application";
-            this.txt_Application.Size = new System.Drawing.Size(607, 20);
+            this.txt_Application.Size = new System.Drawing.Size(607, 21);
             this.txt_Application.TabIndex = 16;
             this.txt_Application.Text = "237b42b-0ce7-4582-830c-34d930b1fd52";
             // 
             // num_login_isEncrypt
             // 
-            this.num_login_isEncrypt.Location = new System.Drawing.Point(85, 260);
+            this.num_login_isEncrypt.Location = new System.Drawing.Point(85, 240);
             this.num_login_isEncrypt.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.num_login_isEncrypt.Name = "num_login_isEncrypt";
-            this.num_login_isEncrypt.Size = new System.Drawing.Size(100, 20);
+            this.num_login_isEncrypt.Size = new System.Drawing.Size(100, 21);
             this.num_login_isEncrypt.TabIndex = 15;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 267);
+            this.label11.Location = new System.Drawing.Point(8, 246);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 14;
             this.label11.Text = "IsEncrypt:";
             // 
@@ -466,17 +474,17 @@
             this.cmb_schema.Items.AddRange(new object[] {
             "http://",
             "https://"});
-            this.cmb_schema.Location = new System.Drawing.Point(85, 41);
+            this.cmb_schema.Location = new System.Drawing.Point(85, 38);
             this.cmb_schema.Name = "cmb_schema";
-            this.cmb_schema.Size = new System.Drawing.Size(97, 21);
+            this.cmb_schema.Size = new System.Drawing.Size(97, 20);
             this.cmb_schema.TabIndex = 12;
             // 
             // btn_login_login
             // 
             this.btn_login_login.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_login_login.Location = new System.Drawing.Point(617, 432);
+            this.btn_login_login.Location = new System.Drawing.Point(617, 399);
             this.btn_login_login.Name = "btn_login_login";
-            this.btn_login_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login_login.Size = new System.Drawing.Size(75, 21);
             this.btn_login_login.TabIndex = 11;
             this.btn_login_login.Text = "Login";
             this.btn_login_login.UseVisualStyleBackColor = true;
@@ -484,14 +492,14 @@
             // 
             // num_login_port
             // 
-            this.num_login_port.Location = new System.Drawing.Point(85, 119);
+            this.num_login_port.Location = new System.Drawing.Point(85, 110);
             this.num_login_port.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.num_login_port.Name = "num_login_port";
-            this.num_login_port.Size = new System.Drawing.Size(100, 20);
+            this.num_login_port.Size = new System.Drawing.Size(100, 21);
             this.num_login_port.TabIndex = 10;
             this.num_login_port.Value = new decimal(new int[] {
             443,
@@ -501,82 +509,82 @@
             // 
             // txt_login_password
             // 
-            this.txt_login_password.Location = new System.Drawing.Point(85, 222);
+            this.txt_login_password.Location = new System.Drawing.Point(85, 205);
             this.txt_login_password.Name = "txt_login_password";
-            this.txt_login_password.Size = new System.Drawing.Size(222, 20);
+            this.txt_login_password.Size = new System.Drawing.Size(222, 21);
             this.txt_login_password.TabIndex = 9;
             this.txt_login_password.Text = "12345678";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 229);
+            this.label10.Location = new System.Drawing.Point(8, 211);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.Size = new System.Drawing.Size(59, 12);
             this.label10.TabIndex = 8;
             this.label10.Text = "Password:";
             // 
             // txt_login_UserName
             // 
-            this.txt_login_UserName.Location = new System.Drawing.Point(85, 187);
+            this.txt_login_UserName.Location = new System.Drawing.Point(85, 173);
             this.txt_login_UserName.Name = "txt_login_UserName";
-            this.txt_login_UserName.Size = new System.Drawing.Size(222, 20);
+            this.txt_login_UserName.Size = new System.Drawing.Size(222, 21);
             this.txt_login_UserName.TabIndex = 7;
             this.txt_login_UserName.Text = "test";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 194);
+            this.label9.Location = new System.Drawing.Point(8, 179);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.Size = new System.Drawing.Size(65, 12);
             this.label9.TabIndex = 6;
             this.label9.Text = "User Name:";
             // 
             // txt_login_ReqUrl
             // 
-            this.txt_login_ReqUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_login_ReqUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_login_ReqUrl.Location = new System.Drawing.Point(85, 151);
+            this.txt_login_ReqUrl.Location = new System.Drawing.Point(85, 139);
             this.txt_login_ReqUrl.Name = "txt_login_ReqUrl";
-            this.txt_login_ReqUrl.Size = new System.Drawing.Size(607, 20);
+            this.txt_login_ReqUrl.Size = new System.Drawing.Size(607, 21);
             this.txt_login_ReqUrl.TabIndex = 5;
             this.txt_login_ReqUrl.Text = "/v1/api/user/login";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 158);
+            this.label8.Location = new System.Drawing.Point(8, 146);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 4;
             this.label8.Text = "Request URL:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 121);
+            this.label7.Location = new System.Drawing.Point(8, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.Size = new System.Drawing.Size(35, 12);
             this.label7.TabIndex = 2;
             this.label7.Text = "Port:";
             // 
             // txt_login_Host
             // 
-            this.txt_login_Host.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_login_Host.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_login_Host.Location = new System.Drawing.Point(85, 78);
+            this.txt_login_Host.Location = new System.Drawing.Point(85, 72);
             this.txt_login_Host.Name = "txt_login_Host";
-            this.txt_login_Host.Size = new System.Drawing.Size(607, 20);
+            this.txt_login_Host.Size = new System.Drawing.Size(607, 21);
             this.txt_login_Host.TabIndex = 1;
             this.txt_login_Host.Text = "qa.homecloud.honeywell.com.cn";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 85);
+            this.label6.Location = new System.Drawing.Point(8, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.Size = new System.Drawing.Size(35, 12);
             this.label6.TabIndex = 0;
             this.label6.Text = "Host:";
             // 
@@ -598,8 +606,8 @@
             this.tab_send.Controls.Add(this.btn_Disconect);
             this.tab_send.Location = new System.Drawing.Point(4, 22);
             this.tab_send.Name = "tab_send";
-            this.tab_send.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tab_send.Size = new System.Drawing.Size(712, 569);
+            this.tab_send.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_send.Size = new System.Drawing.Size(712, 523);
             this.tab_send.TabIndex = 1;
             this.tab_send.Text = "Web Socket Send";
             this.tab_send.UseVisualStyleBackColor = true;
@@ -607,9 +615,9 @@
             // btn_SaveLog
             // 
             this.btn_SaveLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveLog.Location = new System.Drawing.Point(583, 134);
+            this.btn_SaveLog.Location = new System.Drawing.Point(583, 124);
             this.btn_SaveLog.Name = "btn_SaveLog";
-            this.btn_SaveLog.Size = new System.Drawing.Size(75, 23);
+            this.btn_SaveLog.Size = new System.Drawing.Size(75, 21);
             this.btn_SaveLog.TabIndex = 15;
             this.btn_SaveLog.Text = "Save Log";
             this.btn_SaveLog.UseVisualStyleBackColor = true;
@@ -617,10 +625,10 @@
             // 
             // splitContainer3
             // 
-            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer3.Location = new System.Drawing.Point(8, 163);
+            this.splitContainer3.Location = new System.Drawing.Point(8, 150);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -633,8 +641,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.label3);
             this.splitContainer3.Panel2.Controls.Add(this.txt_Received);
-            this.splitContainer3.Size = new System.Drawing.Size(684, 379);
-            this.splitContainer3.SplitterDistance = 187;
+            this.splitContainer3.Size = new System.Drawing.Size(684, 350);
+            this.splitContainer3.SplitterDistance = 172;
             this.splitContainer3.TabIndex = 14;
             // 
             // cmb_wss
@@ -643,9 +651,9 @@
             this.cmb_wss.Items.AddRange(new object[] {
             "ws://",
             "wss://"});
-            this.cmb_wss.Location = new System.Drawing.Point(12, 31);
+            this.cmb_wss.Location = new System.Drawing.Point(12, 29);
             this.cmb_wss.Name = "cmb_wss";
-            this.cmb_wss.Size = new System.Drawing.Size(123, 21);
+            this.cmb_wss.Size = new System.Drawing.Size(123, 20);
             this.cmb_wss.TabIndex = 13;
             // 
             // chk_needLogin
@@ -653,9 +661,9 @@
             this.chk_needLogin.AutoSize = true;
             this.chk_needLogin.Checked = true;
             this.chk_needLogin.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_needLogin.Location = new System.Drawing.Point(142, 126);
+            this.chk_needLogin.Location = new System.Drawing.Point(142, 116);
             this.chk_needLogin.Name = "chk_needLogin";
-            this.chk_needLogin.Size = new System.Drawing.Size(81, 17);
+            this.chk_needLogin.Size = new System.Drawing.Size(84, 16);
             this.chk_needLogin.TabIndex = 12;
             this.chk_needLogin.Text = "Need Login";
             this.chk_needLogin.UseVisualStyleBackColor = true;
@@ -663,9 +671,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(478, 31);
+            this.label5.Location = new System.Drawing.Point(478, 29);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 11;
             this.label5.Text = "Port";
             // 
@@ -685,17 +693,17 @@
             this.tab_nats.Controls.Add(this.label14);
             this.tab_nats.Location = new System.Drawing.Point(4, 22);
             this.tab_nats.Name = "tab_nats";
-            this.tab_nats.Size = new System.Drawing.Size(712, 569);
+            this.tab_nats.Size = new System.Drawing.Size(712, 523);
             this.tab_nats.TabIndex = 2;
             this.tab_nats.Text = "Nats";
             this.tab_nats.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(11, 144);
+            this.splitContainer1.Location = new System.Drawing.Point(11, 133);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -708,28 +716,28 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label16);
             this.splitContainer1.Panel2.Controls.Add(this.txt_Nas_received);
-            this.splitContainer1.Size = new System.Drawing.Size(681, 411);
-            this.splitContainer1.SplitterDistance = 204;
+            this.splitContainer1.Size = new System.Drawing.Size(681, 379);
+            this.splitContainer1.SplitterDistance = 188;
             this.splitContainer1.TabIndex = 27;
             // 
             // txt_Nas_SendContext
             // 
-            this.txt_Nas_SendContext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Nas_SendContext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Nas_SendContext.Location = new System.Drawing.Point(6, 25);
+            this.txt_Nas_SendContext.Location = new System.Drawing.Point(6, 23);
             this.txt_Nas_SendContext.Multiline = true;
             this.txt_Nas_SendContext.Name = "txt_Nas_SendContext";
             this.txt_Nas_SendContext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_SendContext.Size = new System.Drawing.Size(630, 167);
+            this.txt_Nas_SendContext.Size = new System.Drawing.Size(630, 154);
             this.txt_Nas_SendContext.TabIndex = 17;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 9);
+            this.label15.Location = new System.Drawing.Point(3, 8);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
+            this.label15.Size = new System.Drawing.Size(83, 12);
             this.label15.TabIndex = 18;
             this.label15.Text = "Send Context:";
             // 
@@ -738,28 +746,28 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(3, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.Size = new System.Drawing.Size(107, 12);
             this.label16.TabIndex = 22;
             this.label16.Text = "Received Context:";
             // 
             // txt_Nas_received
             // 
-            this.txt_Nas_received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Nas_received.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Nas_received.Location = new System.Drawing.Point(6, 16);
+            this.txt_Nas_received.Location = new System.Drawing.Point(6, 15);
             this.txt_Nas_received.Multiline = true;
             this.txt_Nas_received.Name = "txt_Nas_received";
             this.txt_Nas_received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_received.Size = new System.Drawing.Size(630, 167);
+            this.txt_Nas_received.Size = new System.Drawing.Size(630, 154);
             this.txt_Nas_received.TabIndex = 21;
             // 
             // chk_natTls
             // 
             this.chk_natTls.AutoSize = true;
-            this.chk_natTls.Location = new System.Drawing.Point(207, 70);
+            this.chk_natTls.Location = new System.Drawing.Point(207, 65);
             this.chk_natTls.Name = "chk_natTls";
-            this.chk_natTls.Size = new System.Drawing.Size(40, 17);
+            this.chk_natTls.Size = new System.Drawing.Size(42, 16);
             this.chk_natTls.TabIndex = 26;
             this.chk_natTls.Text = "Tls";
             this.chk_natTls.UseVisualStyleBackColor = true;
@@ -768,9 +776,9 @@
             // 
             this.btn_Nas_Sub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Nas_Sub.Enabled = false;
-            this.btn_Nas_Sub.Location = new System.Drawing.Point(579, 99);
+            this.btn_Nas_Sub.Location = new System.Drawing.Point(579, 91);
             this.btn_Nas_Sub.Name = "btn_Nas_Sub";
-            this.btn_Nas_Sub.Size = new System.Drawing.Size(75, 23);
+            this.btn_Nas_Sub.Size = new System.Drawing.Size(75, 21);
             this.btn_Nas_Sub.TabIndex = 25;
             this.btn_Nas_Sub.Text = "Sub";
             this.btn_Nas_Sub.UseVisualStyleBackColor = true;
@@ -780,9 +788,9 @@
             // 
             this.btn_Nas_Disconn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Nas_Disconn.Enabled = false;
-            this.btn_Nas_Disconn.Location = new System.Drawing.Point(579, 58);
+            this.btn_Nas_Disconn.Location = new System.Drawing.Point(579, 54);
             this.btn_Nas_Disconn.Name = "btn_Nas_Disconn";
-            this.btn_Nas_Disconn.Size = new System.Drawing.Size(75, 23);
+            this.btn_Nas_Disconn.Size = new System.Drawing.Size(75, 21);
             this.btn_Nas_Disconn.TabIndex = 24;
             this.btn_Nas_Disconn.Text = "Disconnect";
             this.btn_Nas_Disconn.UseVisualStyleBackColor = true;
@@ -791,9 +799,9 @@
             // btn_Nas_Connection
             // 
             this.btn_Nas_Connection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Nas_Connection.Location = new System.Drawing.Point(490, 59);
+            this.btn_Nas_Connection.Location = new System.Drawing.Point(490, 54);
             this.btn_Nas_Connection.Name = "btn_Nas_Connection";
-            this.btn_Nas_Connection.Size = new System.Drawing.Size(75, 23);
+            this.btn_Nas_Connection.Size = new System.Drawing.Size(75, 21);
             this.btn_Nas_Connection.TabIndex = 23;
             this.btn_Nas_Connection.Text = "Connect";
             this.btn_Nas_Connection.UseVisualStyleBackColor = true;
@@ -803,9 +811,9 @@
             // 
             this.btn_Nas_Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Nas_Send.Enabled = false;
-            this.btn_Nas_Send.Location = new System.Drawing.Point(490, 99);
+            this.btn_Nas_Send.Location = new System.Drawing.Point(490, 91);
             this.btn_Nas_Send.Name = "btn_Nas_Send";
-            this.btn_Nas_Send.Size = new System.Drawing.Size(75, 23);
+            this.btn_Nas_Send.Size = new System.Drawing.Size(75, 21);
             this.btn_Nas_Send.TabIndex = 19;
             this.btn_Nas_Send.Text = "Pub";
             this.btn_Nas_Send.UseVisualStyleBackColor = true;
@@ -813,14 +821,14 @@
             // 
             // num_NasPort
             // 
-            this.num_NasPort.Location = new System.Drawing.Point(85, 67);
+            this.num_NasPort.Location = new System.Drawing.Point(85, 62);
             this.num_NasPort.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.num_NasPort.Name = "num_NasPort";
-            this.num_NasPort.Size = new System.Drawing.Size(100, 20);
+            this.num_NasPort.Size = new System.Drawing.Size(100, 21);
             this.num_NasPort.TabIndex = 16;
             this.num_NasPort.Value = new decimal(new int[] {
             4222,
@@ -830,46 +838,46 @@
             // 
             // txt_Nas_Topic
             // 
-            this.txt_Nas_Topic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_Nas_Topic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Nas_Topic.Location = new System.Drawing.Point(85, 99);
+            this.txt_Nas_Topic.Location = new System.Drawing.Point(85, 91);
             this.txt_Nas_Topic.Name = "txt_Nas_Topic";
-            this.txt_Nas_Topic.Size = new System.Drawing.Size(372, 20);
+            this.txt_Nas_Topic.Size = new System.Drawing.Size(372, 21);
             this.txt_Nas_Topic.TabIndex = 15;
             this.txt_Nas_Topic.Text = "toIot.>";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 106);
+            this.label12.Location = new System.Drawing.Point(8, 98);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.Size = new System.Drawing.Size(41, 12);
             this.label12.TabIndex = 14;
             this.label12.Text = "Topic:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 69);
+            this.label13.Location = new System.Drawing.Point(8, 64);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 13);
+            this.label13.Size = new System.Drawing.Size(35, 12);
             this.label13.TabIndex = 13;
             this.label13.Text = "Port:";
             // 
             // txt_natHost
             // 
-            this.txt_natHost.Location = new System.Drawing.Point(85, 26);
+            this.txt_natHost.Location = new System.Drawing.Point(85, 24);
             this.txt_natHost.Name = "txt_natHost";
-            this.txt_natHost.Size = new System.Drawing.Size(222, 20);
+            this.txt_natHost.Size = new System.Drawing.Size(222, 21);
             this.txt_natHost.TabIndex = 12;
             this.txt_natHost.Text = "127.0.0.1";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 33);
+            this.label14.Location = new System.Drawing.Point(8, 30);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.Size = new System.Drawing.Size(35, 12);
             this.label14.TabIndex = 11;
             this.label14.Text = "Host:";
             // 
@@ -886,8 +894,8 @@
             this.tabApi.Controls.Add(this.num_ApiPort);
             this.tabApi.Location = new System.Drawing.Point(4, 22);
             this.tabApi.Name = "tabApi";
-            this.tabApi.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabApi.Size = new System.Drawing.Size(712, 569);
+            this.tabApi.Padding = new System.Windows.Forms.Padding(3);
+            this.tabApi.Size = new System.Drawing.Size(712, 523);
             this.tabApi.TabIndex = 3;
             this.tabApi.Text = "WebApi";
             this.tabApi.UseVisualStyleBackColor = true;
@@ -895,9 +903,9 @@
             // btn_saveApiLog
             // 
             this.btn_saveApiLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_saveApiLog.Location = new System.Drawing.Point(626, 95);
+            this.btn_saveApiLog.Location = new System.Drawing.Point(626, 88);
             this.btn_saveApiLog.Name = "btn_saveApiLog";
-            this.btn_saveApiLog.Size = new System.Drawing.Size(75, 23);
+            this.btn_saveApiLog.Size = new System.Drawing.Size(75, 21);
             this.btn_saveApiLog.TabIndex = 28;
             this.btn_saveApiLog.Text = "Save Log";
             this.btn_saveApiLog.UseVisualStyleBackColor = true;
@@ -905,10 +913,10 @@
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.Location = new System.Drawing.Point(8, 124);
+            this.splitContainer2.Location = new System.Drawing.Point(8, 114);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -921,50 +929,50 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label23);
             this.splitContainer2.Panel2.Controls.Add(this.txt_ApiReceive);
-            this.splitContainer2.Size = new System.Drawing.Size(696, 396);
-            this.splitContainer2.SplitterDistance = 196;
+            this.splitContainer2.Size = new System.Drawing.Size(696, 366);
+            this.splitContainer2.SplitterDistance = 181;
             this.splitContainer2.TabIndex = 27;
             // 
             // txt_ApiSend
             // 
-            this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_ApiSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiSend.Location = new System.Drawing.Point(6, 24);
+            this.txt_ApiSend.Location = new System.Drawing.Point(6, 22);
             this.txt_ApiSend.Multiline = true;
             this.txt_ApiSend.Name = "txt_ApiSend";
             this.txt_ApiSend.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_ApiSend.Size = new System.Drawing.Size(671, 160);
+            this.txt_ApiSend.Size = new System.Drawing.Size(671, 148);
             this.txt_ApiSend.TabIndex = 22;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(4, 8);
+            this.label24.Location = new System.Drawing.Point(4, 7);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(74, 13);
+            this.label24.Size = new System.Drawing.Size(83, 12);
             this.label24.TabIndex = 24;
             this.label24.Text = "Send Context:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(3, 9);
+            this.label23.Location = new System.Drawing.Point(3, 8);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 13);
+            this.label23.Size = new System.Drawing.Size(107, 12);
             this.label23.TabIndex = 25;
             this.label23.Text = "Received Context:";
             // 
             // txt_ApiReceive
             // 
-            this.txt_ApiReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_ApiReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiReceive.Location = new System.Drawing.Point(7, 25);
+            this.txt_ApiReceive.Location = new System.Drawing.Point(7, 23);
             this.txt_ApiReceive.Multiline = true;
             this.txt_ApiReceive.Name = "txt_ApiReceive";
             this.txt_ApiReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_ApiReceive.Size = new System.Drawing.Size(670, 158);
+            this.txt_ApiReceive.Size = new System.Drawing.Size(670, 146);
             this.txt_ApiReceive.TabIndex = 23;
             // 
             // cmb_HttpMethod
@@ -975,17 +983,17 @@
             "GET",
             "PUT",
             "DELETE"});
-            this.cmb_HttpMethod.Location = new System.Drawing.Point(111, 74);
+            this.cmb_HttpMethod.Location = new System.Drawing.Point(111, 68);
             this.cmb_HttpMethod.Name = "cmb_HttpMethod";
-            this.cmb_HttpMethod.Size = new System.Drawing.Size(97, 21);
+            this.cmb_HttpMethod.Size = new System.Drawing.Size(97, 20);
             this.cmb_HttpMethod.TabIndex = 26;
             // 
             // btn_SendApi
             // 
             this.btn_SendApi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SendApi.Location = new System.Drawing.Point(545, 95);
+            this.btn_SendApi.Location = new System.Drawing.Point(545, 88);
             this.btn_SendApi.Name = "btn_SendApi";
-            this.btn_SendApi.Size = new System.Drawing.Size(75, 23);
+            this.btn_SendApi.Size = new System.Drawing.Size(75, 21);
             this.btn_SendApi.TabIndex = 21;
             this.btn_SendApi.Text = "Send";
             this.btn_SendApi.UseVisualStyleBackColor = true;
@@ -997,48 +1005,48 @@
             this.cmb_ApiAchema.Items.AddRange(new object[] {
             "http://",
             "https://"});
-            this.cmb_ApiAchema.Location = new System.Drawing.Point(8, 12);
+            this.cmb_ApiAchema.Location = new System.Drawing.Point(8, 11);
             this.cmb_ApiAchema.Name = "cmb_ApiAchema";
-            this.cmb_ApiAchema.Size = new System.Drawing.Size(97, 21);
+            this.cmb_ApiAchema.Size = new System.Drawing.Size(97, 20);
             this.cmb_ApiAchema.TabIndex = 20;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(474, 17);
+            this.label22.Location = new System.Drawing.Point(474, 16);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(26, 13);
+            this.label22.Size = new System.Drawing.Size(29, 12);
             this.label22.TabIndex = 16;
             this.label22.Text = "Port";
             // 
             // txt_ApiAction
             // 
-            this.txt_ApiAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_ApiAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ApiAction.Location = new System.Drawing.Point(111, 48);
+            this.txt_ApiAction.Location = new System.Drawing.Point(111, 44);
             this.txt_ApiAction.Name = "txt_ApiAction";
-            this.txt_ApiAction.Size = new System.Drawing.Size(343, 20);
+            this.txt_ApiAction.Size = new System.Drawing.Size(343, 21);
             this.txt_ApiAction.TabIndex = 15;
             this.txt_ApiAction.Text = "v1/websocket";
             // 
             // txt_ApiHost
             // 
-            this.txt_ApiHost.Location = new System.Drawing.Point(111, 12);
+            this.txt_ApiHost.Location = new System.Drawing.Point(111, 11);
             this.txt_ApiHost.Name = "txt_ApiHost";
-            this.txt_ApiHost.Size = new System.Drawing.Size(348, 20);
+            this.txt_ApiHost.Size = new System.Drawing.Size(348, 21);
             this.txt_ApiHost.TabIndex = 12;
             this.txt_ApiHost.Text = "localhost";
             // 
             // num_ApiPort
             // 
-            this.num_ApiPort.Location = new System.Drawing.Point(506, 13);
+            this.num_ApiPort.Location = new System.Drawing.Point(506, 12);
             this.num_ApiPort.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.num_ApiPort.Name = "num_ApiPort";
-            this.num_ApiPort.Size = new System.Drawing.Size(57, 20);
+            this.num_ApiPort.Size = new System.Drawing.Size(57, 21);
             this.num_ApiPort.TabIndex = 13;
             this.num_ApiPort.Value = new decimal(new int[] {
             8082,
@@ -1062,9 +1070,9 @@
             this.tabmqtt.Controls.Add(this.txt_mqttService);
             this.tabmqtt.Controls.Add(this.label26);
             this.tabmqtt.Location = new System.Drawing.Point(4, 22);
-            this.tabmqtt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabmqtt.Margin = new System.Windows.Forms.Padding(2);
             this.tabmqtt.Name = "tabmqtt";
-            this.tabmqtt.Size = new System.Drawing.Size(712, 569);
+            this.tabmqtt.Size = new System.Drawing.Size(712, 523);
             this.tabmqtt.TabIndex = 4;
             this.tabmqtt.Text = "MQTT";
             this.tabmqtt.UseVisualStyleBackColor = true;
@@ -1073,29 +1081,29 @@
             // 
             this.lbl_SubTopic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_SubTopic.AutoSize = true;
-            this.lbl_SubTopic.Location = new System.Drawing.Point(75, 549);
+            this.lbl_SubTopic.Location = new System.Drawing.Point(75, 507);
             this.lbl_SubTopic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_SubTopic.Name = "lbl_SubTopic";
-            this.lbl_SubTopic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_SubTopic.Size = new System.Drawing.Size(0, 12);
             this.lbl_SubTopic.TabIndex = 38;
             // 
             // label30
             // 
             this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(17, 549);
+            this.label30.Location = new System.Drawing.Point(17, 507);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(54, 13);
+            this.label30.Size = new System.Drawing.Size(53, 12);
             this.label30.TabIndex = 37;
             this.label30.Text = "Now Sub:";
             // 
             // splitContainer4
             // 
-            this.splitContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer4.Location = new System.Drawing.Point(15, 151);
+            this.splitContainer4.Location = new System.Drawing.Point(15, 139);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1108,29 +1116,29 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.label29);
             this.splitContainer4.Panel2.Controls.Add(this.txt_mqttReceiveContent);
-            this.splitContainer4.Size = new System.Drawing.Size(673, 411);
-            this.splitContainer4.SplitterDistance = 204;
+            this.splitContainer4.Size = new System.Drawing.Size(673, 379);
+            this.splitContainer4.SplitterDistance = 188;
             this.splitContainer4.TabIndex = 36;
             // 
             // txt_mqttSentContent
             // 
-            this.txt_mqttSentContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_mqttSentContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mqttSentContent.Location = new System.Drawing.Point(6, 25);
+            this.txt_mqttSentContent.Location = new System.Drawing.Point(6, 23);
             this.txt_mqttSentContent.Multiline = true;
             this.txt_mqttSentContent.Name = "txt_mqttSentContent";
             this.txt_mqttSentContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_mqttSentContent.Size = new System.Drawing.Size(654, 162);
+            this.txt_mqttSentContent.Size = new System.Drawing.Size(654, 150);
             this.txt_mqttSentContent.TabIndex = 17;
             this.txt_mqttSentContent.Text = "{\"Key\":\"value\"}";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 9);
+            this.label28.Location = new System.Drawing.Point(3, 8);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(74, 13);
+            this.label28.Size = new System.Drawing.Size(83, 12);
             this.label28.TabIndex = 18;
             this.label28.Text = "Send Context:";
             // 
@@ -1139,38 +1147,38 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(3, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(95, 13);
+            this.label29.Size = new System.Drawing.Size(107, 12);
             this.label29.TabIndex = 22;
             this.label29.Text = "Received Context:";
             // 
             // txt_mqttReceiveContent
             // 
-            this.txt_mqttReceiveContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_mqttReceiveContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mqttReceiveContent.Location = new System.Drawing.Point(6, 16);
+            this.txt_mqttReceiveContent.Location = new System.Drawing.Point(6, 15);
             this.txt_mqttReceiveContent.Multiline = true;
             this.txt_mqttReceiveContent.Name = "txt_mqttReceiveContent";
             this.txt_mqttReceiveContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_mqttReceiveContent.Size = new System.Drawing.Size(654, 165);
+            this.txt_mqttReceiveContent.Size = new System.Drawing.Size(654, 153);
             this.txt_mqttReceiveContent.TabIndex = 21;
             // 
             // txt_mqttTopic
             // 
-            this.txt_mqttTopic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txt_mqttTopic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_mqttTopic.Location = new System.Drawing.Point(91, 105);
+            this.txt_mqttTopic.Location = new System.Drawing.Point(91, 97);
             this.txt_mqttTopic.Name = "txt_mqttTopic";
-            this.txt_mqttTopic.Size = new System.Drawing.Size(372, 20);
+            this.txt_mqttTopic.Size = new System.Drawing.Size(372, 21);
             this.txt_mqttTopic.TabIndex = 35;
             this.txt_mqttTopic.Text = "toCloud/144146000012";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(13, 113);
+            this.label27.Location = new System.Drawing.Point(13, 104);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(37, 13);
+            this.label27.Size = new System.Drawing.Size(41, 12);
             this.label27.TabIndex = 34;
             this.label27.Text = "Topic:";
             // 
@@ -1178,9 +1186,9 @@
             // 
             this.btn_MqttSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_MqttSub.Enabled = false;
-            this.btn_MqttSub.Location = new System.Drawing.Point(584, 103);
+            this.btn_MqttSub.Location = new System.Drawing.Point(584, 95);
             this.btn_MqttSub.Name = "btn_MqttSub";
-            this.btn_MqttSub.Size = new System.Drawing.Size(75, 23);
+            this.btn_MqttSub.Size = new System.Drawing.Size(75, 21);
             this.btn_MqttSub.TabIndex = 33;
             this.btn_MqttSub.Text = "Sub";
             this.btn_MqttSub.UseVisualStyleBackColor = true;
@@ -1190,9 +1198,9 @@
             // 
             this.btn_DisconnectMqtt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_DisconnectMqtt.Enabled = false;
-            this.btn_DisconnectMqtt.Location = new System.Drawing.Point(584, 61);
+            this.btn_DisconnectMqtt.Location = new System.Drawing.Point(584, 56);
             this.btn_DisconnectMqtt.Name = "btn_DisconnectMqtt";
-            this.btn_DisconnectMqtt.Size = new System.Drawing.Size(75, 23);
+            this.btn_DisconnectMqtt.Size = new System.Drawing.Size(75, 21);
             this.btn_DisconnectMqtt.TabIndex = 32;
             this.btn_DisconnectMqtt.Text = "Disconnect";
             this.btn_DisconnectMqtt.UseVisualStyleBackColor = true;
@@ -1201,9 +1209,9 @@
             // btn_mqttConnect
             // 
             this.btn_mqttConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_mqttConnect.Location = new System.Drawing.Point(495, 63);
+            this.btn_mqttConnect.Location = new System.Drawing.Point(495, 58);
             this.btn_mqttConnect.Name = "btn_mqttConnect";
-            this.btn_mqttConnect.Size = new System.Drawing.Size(75, 23);
+            this.btn_mqttConnect.Size = new System.Drawing.Size(75, 21);
             this.btn_mqttConnect.TabIndex = 31;
             this.btn_mqttConnect.Text = "Connect";
             this.btn_mqttConnect.UseVisualStyleBackColor = true;
@@ -1213,9 +1221,9 @@
             // 
             this.btn_MqttPub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_MqttPub.Enabled = false;
-            this.btn_MqttPub.Location = new System.Drawing.Point(495, 103);
+            this.btn_MqttPub.Location = new System.Drawing.Point(495, 95);
             this.btn_MqttPub.Name = "btn_MqttPub";
-            this.btn_MqttPub.Size = new System.Drawing.Size(75, 23);
+            this.btn_MqttPub.Size = new System.Drawing.Size(75, 21);
             this.btn_MqttPub.TabIndex = 30;
             this.btn_MqttPub.Text = "Pub";
             this.btn_MqttPub.UseVisualStyleBackColor = true;
@@ -1223,14 +1231,14 @@
             // 
             // num_mqttPort
             // 
-            this.num_mqttPort.Location = new System.Drawing.Point(91, 71);
+            this.num_mqttPort.Location = new System.Drawing.Point(91, 66);
             this.num_mqttPort.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
             this.num_mqttPort.Name = "num_mqttPort";
-            this.num_mqttPort.Size = new System.Drawing.Size(100, 20);
+            this.num_mqttPort.Size = new System.Drawing.Size(100, 21);
             this.num_mqttPort.TabIndex = 29;
             this.num_mqttPort.Value = new decimal(new int[] {
             1883,
@@ -1241,26 +1249,26 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(13, 73);
+            this.label25.Location = new System.Drawing.Point(13, 67);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 13);
+            this.label25.Size = new System.Drawing.Size(35, 12);
             this.label25.TabIndex = 28;
             this.label25.Text = "Port:";
             // 
             // txt_mqttService
             // 
-            this.txt_mqttService.Location = new System.Drawing.Point(91, 30);
+            this.txt_mqttService.Location = new System.Drawing.Point(91, 28);
             this.txt_mqttService.Name = "txt_mqttService";
-            this.txt_mqttService.Size = new System.Drawing.Size(222, 20);
+            this.txt_mqttService.Size = new System.Drawing.Size(222, 21);
             this.txt_mqttService.TabIndex = 27;
             this.txt_mqttService.Text = "127.0.0.1";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(13, 37);
+            this.label26.Location = new System.Drawing.Point(13, 34);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(32, 13);
+            this.label26.Size = new System.Drawing.Size(35, 12);
             this.label26.TabIndex = 26;
             this.label26.Text = "Host:";
             // 
@@ -1273,7 +1281,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.tss_subTopic});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 618);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 569);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(720, 22);
             this.statusStrip1.TabIndex = 12;
@@ -1339,17 +1347,76 @@
             this.saveInputSettingToolStripMenuItem.Text = "Save Input Setting";
             this.saveInputSettingToolStripMenuItem.Click += new System.EventHandler(this.saveInputSettingToolStripMenuItem_Click);
             // 
+            // tab_androidPush
+            // 
+            this.tab_androidPush.Controls.Add(this.btn_push);
+            this.tab_androidPush.Controls.Add(this.txt_XG_ACCESS_KEY);
+            this.tab_androidPush.Controls.Add(this.label31);
+            this.tab_androidPush.Controls.Add(this.txt_XG_ACCESS_ID);
+            this.tab_androidPush.Controls.Add(this.lbl_XG_ACCESS_ID);
+            this.tab_androidPush.Location = new System.Drawing.Point(4, 22);
+            this.tab_androidPush.Name = "tab_androidPush";
+            this.tab_androidPush.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_androidPush.Size = new System.Drawing.Size(712, 523);
+            this.tab_androidPush.TabIndex = 5;
+            this.tab_androidPush.Text = "Android Push";
+            this.tab_androidPush.UseVisualStyleBackColor = true;
+            // 
+            // lbl_XG_ACCESS_ID
+            // 
+            this.lbl_XG_ACCESS_ID.AutoSize = true;
+            this.lbl_XG_ACCESS_ID.Location = new System.Drawing.Point(8, 32);
+            this.lbl_XG_ACCESS_ID.Name = "lbl_XG_ACCESS_ID";
+            this.lbl_XG_ACCESS_ID.Size = new System.Drawing.Size(95, 12);
+            this.lbl_XG_ACCESS_ID.TabIndex = 0;
+            this.lbl_XG_ACCESS_ID.Text = "XG_ACCESS_ID ：";
+            // 
+            // txt_XG_ACCESS_ID
+            // 
+            this.txt_XG_ACCESS_ID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_XG_ACCESS_ID.Location = new System.Drawing.Point(119, 22);
+            this.txt_XG_ACCESS_ID.Name = "txt_XG_ACCESS_ID";
+            this.txt_XG_ACCESS_ID.Size = new System.Drawing.Size(571, 21);
+            this.txt_XG_ACCESS_ID.TabIndex = 1;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(10, 73);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(101, 12);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "XG_ACCESS_KEY ：";
+            // 
+            // txt_XG_ACCESS_KEY
+            // 
+            this.txt_XG_ACCESS_KEY.Location = new System.Drawing.Point(119, 73);
+            this.txt_XG_ACCESS_KEY.Name = "txt_XG_ACCESS_KEY";
+            this.txt_XG_ACCESS_KEY.Size = new System.Drawing.Size(571, 21);
+            this.txt_XG_ACCESS_KEY.TabIndex = 3;
+            // 
+            // btn_push
+            // 
+            this.btn_push.Location = new System.Drawing.Point(615, 124);
+            this.btn_push.Name = "btn_push";
+            this.btn_push.Size = new System.Drawing.Size(75, 23);
+            this.btn_push.TabIndex = 4;
+            this.btn_push.Text = "Push";
+            this.btn_push.UseVisualStyleBackColor = true;
+            this.btn_push.Click += new System.EventHandler(this.btn_push_Click);
+            // 
             // WebSocketTestClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 640);
+            this.ClientSize = new System.Drawing.Size(720, 591);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(700, 600);
+            this.MinimumSize = new System.Drawing.Size(700, 557);
             this.Name = "WebSocketTestClient";
             this.Text = "WebSocket & Nats Client";
             this.Load += new System.EventHandler(this.WebSocketClient_Load);
@@ -1398,6 +1465,8 @@
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tab_androidPush.ResumeLayout(false);
+            this.tab_androidPush.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1507,6 +1576,12 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lbl_SubTopic;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TabPage tab_androidPush;
+        private System.Windows.Forms.TextBox txt_XG_ACCESS_ID;
+        private System.Windows.Forms.Label lbl_XG_ACCESS_ID;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txt_XG_ACCESS_KEY;
+        private System.Windows.Forms.Button btn_push;
     }
 }
 
