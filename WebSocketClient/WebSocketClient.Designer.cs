@@ -123,6 +123,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txt_mqttService = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.tabiOS = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
@@ -132,7 +133,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loadInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveInputSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabAndorid = new System.Windows.Forms.TabPage();
+            this.lbl_token = new System.Windows.Forms.Label();
+            this.txt_deviceToken = new System.Windows.Forms.TextBox();
+            this.lbl_pushText = new System.Windows.Forms.Label();
+            this.txt_pushText = new System.Windows.Forms.TextBox();
+            this.btn_pushiOS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.num_Port)).BeginInit();
             this.tab_Control.SuspendLayout();
             this.tab_login.SuspendLayout();
@@ -161,6 +166,7 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_mqttPort)).BeginInit();
+            this.tabiOS.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -314,7 +320,7 @@
             this.tab_Control.Controls.Add(this.tab_nats);
             this.tab_Control.Controls.Add(this.tabApi);
             this.tab_Control.Controls.Add(this.tabmqtt);
-            this.tab_Control.Controls.Add(this.tabAndorid);
+            this.tab_Control.Controls.Add(this.tabiOS);
             this.tab_Control.Location = new System.Drawing.Point(0, 25);
             this.tab_Control.Name = "tab_Control";
             this.tab_Control.SelectedIndex = 0;
@@ -723,7 +729,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label16);
             this.splitContainer1.Panel2.Controls.Add(this.txt_Nas_received);
             this.splitContainer1.Size = new System.Drawing.Size(681, 379);
-            this.splitContainer1.SplitterDistance = 188;
+            this.splitContainer1.SplitterDistance = 187;
             this.splitContainer1.TabIndex = 27;
             // 
             // txt_Nas_SendContext
@@ -735,7 +741,7 @@
             this.txt_Nas_SendContext.Multiline = true;
             this.txt_Nas_SendContext.Name = "txt_Nas_SendContext";
             this.txt_Nas_SendContext.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_SendContext.Size = new System.Drawing.Size(630, 154);
+            this.txt_Nas_SendContext.Size = new System.Drawing.Size(630, 153);
             this.txt_Nas_SendContext.TabIndex = 17;
             // 
             // label15
@@ -765,7 +771,7 @@
             this.txt_Nas_received.Multiline = true;
             this.txt_Nas_received.Name = "txt_Nas_received";
             this.txt_Nas_received.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_Nas_received.Size = new System.Drawing.Size(630, 154);
+            this.txt_Nas_received.Size = new System.Drawing.Size(630, 155);
             this.txt_Nas_received.TabIndex = 21;
             // 
             // chk_natTls
@@ -1123,7 +1129,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.label29);
             this.splitContainer4.Panel2.Controls.Add(this.txt_mqttReceiveContent);
             this.splitContainer4.Size = new System.Drawing.Size(673, 379);
-            this.splitContainer4.SplitterDistance = 188;
+            this.splitContainer4.SplitterDistance = 187;
             this.splitContainer4.TabIndex = 36;
             // 
             // txt_mqttSentContent
@@ -1135,7 +1141,7 @@
             this.txt_mqttSentContent.Multiline = true;
             this.txt_mqttSentContent.Name = "txt_mqttSentContent";
             this.txt_mqttSentContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_mqttSentContent.Size = new System.Drawing.Size(654, 150);
+            this.txt_mqttSentContent.Size = new System.Drawing.Size(654, 149);
             this.txt_mqttSentContent.TabIndex = 17;
             this.txt_mqttSentContent.Text = "{\"Key\":\"value\"}";
             // 
@@ -1166,7 +1172,7 @@
             this.txt_mqttReceiveContent.Multiline = true;
             this.txt_mqttReceiveContent.Name = "txt_mqttReceiveContent";
             this.txt_mqttReceiveContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_mqttReceiveContent.Size = new System.Drawing.Size(654, 153);
+            this.txt_mqttReceiveContent.Size = new System.Drawing.Size(654, 154);
             this.txt_mqttReceiveContent.TabIndex = 21;
             // 
             // txt_mqttTopic
@@ -1278,6 +1284,21 @@
             this.label26.TabIndex = 26;
             this.label26.Text = "Host:";
             // 
+            // tabiOS
+            // 
+            this.tabiOS.Controls.Add(this.btn_pushiOS);
+            this.tabiOS.Controls.Add(this.txt_pushText);
+            this.tabiOS.Controls.Add(this.lbl_pushText);
+            this.tabiOS.Controls.Add(this.txt_deviceToken);
+            this.tabiOS.Controls.Add(this.lbl_token);
+            this.tabiOS.Location = new System.Drawing.Point(4, 22);
+            this.tabiOS.Name = "tabiOS";
+            this.tabiOS.Padding = new System.Windows.Forms.Padding(3);
+            this.tabiOS.Size = new System.Drawing.Size(712, 523);
+            this.tabiOS.TabIndex = 5;
+            this.tabiOS.Text = "iOS";
+            this.tabiOS.UseVisualStyleBackColor = true;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -1353,15 +1374,48 @@
             this.saveInputSettingToolStripMenuItem.Text = "Save Input Setting";
             this.saveInputSettingToolStripMenuItem.Click += new System.EventHandler(this.saveInputSettingToolStripMenuItem_Click);
             // 
-            // tabAndorid
+            // lbl_token
             // 
-            this.tabAndorid.Location = new System.Drawing.Point(4, 22);
-            this.tabAndorid.Name = "tabAndorid";
-            this.tabAndorid.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAndorid.Size = new System.Drawing.Size(712, 523);
-            this.tabAndorid.TabIndex = 5;
-            this.tabAndorid.Text = "Android";
-            this.tabAndorid.UseVisualStyleBackColor = true;
+            this.lbl_token.AutoSize = true;
+            this.lbl_token.Location = new System.Drawing.Point(22, 31);
+            this.lbl_token.Name = "lbl_token";
+            this.lbl_token.Size = new System.Drawing.Size(83, 12);
+            this.lbl_token.TabIndex = 0;
+            this.lbl_token.Text = "Device Toke：";
+            // 
+            // txt_deviceToken
+            // 
+            this.txt_deviceToken.Location = new System.Drawing.Point(129, 31);
+            this.txt_deviceToken.Name = "txt_deviceToken";
+            this.txt_deviceToken.Size = new System.Drawing.Size(563, 21);
+            this.txt_deviceToken.TabIndex = 1;
+            // 
+            // lbl_pushText
+            // 
+            this.lbl_pushText.AutoSize = true;
+            this.lbl_pushText.Location = new System.Drawing.Point(22, 87);
+            this.lbl_pushText.Name = "lbl_pushText";
+            this.lbl_pushText.Size = new System.Drawing.Size(65, 12);
+            this.lbl_pushText.TabIndex = 2;
+            this.lbl_pushText.Text = "Push Text:";
+            // 
+            // txt_pushText
+            // 
+            this.txt_pushText.Location = new System.Drawing.Point(129, 84);
+            this.txt_pushText.Multiline = true;
+            this.txt_pushText.Name = "txt_pushText";
+            this.txt_pushText.Size = new System.Drawing.Size(563, 367);
+            this.txt_pushText.TabIndex = 3;
+            // 
+            // btn_pushiOS
+            // 
+            this.btn_pushiOS.Location = new System.Drawing.Point(617, 468);
+            this.btn_pushiOS.Name = "btn_pushiOS";
+            this.btn_pushiOS.Size = new System.Drawing.Size(75, 23);
+            this.btn_pushiOS.TabIndex = 4;
+            this.btn_pushiOS.Text = "Push";
+            this.btn_pushiOS.UseVisualStyleBackColor = true;
+            this.btn_pushiOS.Click += new System.EventHandler(this.btn_pushiOS_Click);
             // 
             // WebSocketTestClient
             // 
@@ -1418,6 +1472,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.num_mqttPort)).EndInit();
+            this.tabiOS.ResumeLayout(false);
+            this.tabiOS.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -1532,7 +1588,12 @@
         private System.Windows.Forms.Label lbl_SubTopic;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button btn_loadJSON;
-        private System.Windows.Forms.TabPage tabAndorid;
+        private System.Windows.Forms.TabPage tabiOS;
+        private System.Windows.Forms.Button btn_pushiOS;
+        private System.Windows.Forms.TextBox txt_pushText;
+        private System.Windows.Forms.Label lbl_pushText;
+        private System.Windows.Forms.TextBox txt_deviceToken;
+        private System.Windows.Forms.Label lbl_token;
     }
 }
 
